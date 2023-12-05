@@ -37,3 +37,15 @@ body {
     object-position: center;
     opacity: 0.9;
 }
+
+.carousel-caption {
+    position: absolute;
+    right: 15%;
+    bottom: 1.25rem;
+    left: 15%;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    color: var(--hunterGreen);
+    text-align: center;
+    background-color: rgba(255,255,255,0.5);
+}
