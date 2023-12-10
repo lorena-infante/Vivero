@@ -31,6 +31,7 @@
     <link rel="stylesheet" href="/styles/styles.css">
     <link rel="stylesheet" href="/styles/frutales.css">
     <link rel="stylesheet" href="/styles/header.css">
+    <link rel="stylesheet" href="/styles/carritoModal.css">
     <link rel="stylesheet" href="/styles/footer.css">
     <script defer src="/src/main.js"></script>
 
@@ -75,24 +76,54 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">Contacto</a>
                         </li>
+                        <!--BTN CART-->
                         <li class="btn_cart">
                             <!-- Button trigger modal -->
                             <button type="button" class="btn btn-outline-success" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal">
+                                data-bs-target="#carritoModal">
                                 🛒
                             </button>
                             <!-- Modal -->
-                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            <div class="modal fade" id="carritoModal" tabindex="-1" aria-labelledby="carritoModalLabel"
                                 aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-scrollable">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Mi Carrito</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                aria-label="Close"></button>
+                                            <h5 class="modal-title" id="carritoModalLabel">Mi Carrito</h5>
                                         </div>
                                         <div class="modal-body">
-                                            ...
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="card mb-3 p-2" style="max-width: 540px;">
+                                                        <div class="row g-0 align-items-center">
+                                                            <div class="col-12 col-md-4">
+                                                                <img src="/src/assets/images/AbonosHummusLiquido-TalagardenViveroSantiago.jpg"
+                                                                    class="img-fluid rounded-start img-cover"
+                                                                    alt="Imagen Producto">
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <div class="card-body">
+                                                                    <h5 class="card-title mb-1">Nombre</h5>
+                                                                    <p class="card-text mb-1">Price</p>
+                                                                    <p class="card-text mb-1">Quantity</p>
+                                                                </div>
+                                                            </div>
+                                                            <div
+                                                                class="col-6 col-md-2 align-items-center justify-content-center d-flex">
+                                                                <button class="btn btn-outline-danger">
+                                                                    Eliminar
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <h5 class="fw-bold">Subtotal</h5>
+                                                    </div>
+                                                    <div class="col">$$$$</div>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-outline-dark"
@@ -102,9 +133,8 @@
                                     </div>
                                 </div>
                             </div>
-
-
                         </li>
+                        <!--Fin btn Cart-->
                     </ul>
                 </div>
             </div>
