@@ -101,6 +101,7 @@ const objProductos = JSON.parse(localStorage.getItem('producto'));
 let contenedorProductos = document.getElementById('contenedor_productos');
 
 
+
 function mostrarProductos() {
     contenedorProductos.innerHTML = ``;
     objProductos.forEach((objProducto) => {
@@ -111,7 +112,7 @@ function mostrarProductos() {
                     <div class="card-body">
                         <h5 class="card-title fw-bold">${objProducto.nombre}</h5>
                         <p class="card-text text-success">$${objProducto.precio}</p>
-                        <button id="btn-${objProducto.id}"class="btn btn-success btn-primary_prod">Añadir al Carrito</button>
+                        <button id="${objProducto.id}" class="btn btn-success btn-primary_prod add_cart">Añadir al Carrito</button>
                     </div>
                 </div>
             </div>`
@@ -119,3 +120,54 @@ function mostrarProductos() {
 }
 
 mostrarProductos();
+
+
+
+
+
+contenedorProductos.addEventListener('click', function (e) {
+    if (e.target.classList.contains('add_cart')) {
+        const botonCarrito = e.target;
+        console.log(`botonCarrito.id:${botonCarrito.id}`);
+        agregarCarrito(botonCarrito.id);
+    }
+})
+
+let carrito = [];
+function agregarCarrito(id) {
+    let productoAgregado = productos.find((producto) => producto.id === id );
+    carrito.push(productoAgregado);
+    dibujarCarrito();
+}
+
+function dibujarCarrito() {
+    let modalContenedor = document.getElementById('cart-container');
+    modalContenedor.innerHTML = ``;
+    carrito.forEach((elemento) => {
+        modalContenedor.innerHTML = modalContenedor.innerHTML + `
+        <div class="row">
+            <div class="card mb-3 p-2" style="max-width: 540px;">
+                <div class="row g-0 align-items-center">
+                    <div class="col-12 col-md-4">
+                        <img src="${elemento.img}"
+                            class="img-fluid rounded-start img-cover"
+                            alt="Imagen Producto">
+                    </div>
+                    <div class="col-6">
+                        <div class="card-body">
+                            <h5 class="card-title mb-1">${elemento.nombre}</h5>
+                            <p class="card-text mb-1">$${elemento.precio}</p>
+                            <p class="card-text mb-1">1</p>
+                        </div>
+                    </div>
+                    <div
+                        class="col-6 col-md-2 align-items-center justify-content-center d-flex">
+                        <button id="${elemento.id}" class="btn btn-outline-danger">
+                            Eliminar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>`
+    });
+}
