@@ -33,6 +33,10 @@
     <link rel="stylesheet" href="/styles/header.css">
     <link rel="stylesheet" href="/styles/carritoModal.css">
     <link rel="stylesheet" href="/styles/footer.css">
+    <!-- JS productos -->
+    <script defer src="/src/producto.js"></script>
+    <script defer src="/src/frutales.js"></script>
+
     <script defer src="/src/main.js"></script>
 
 </head>
@@ -217,53 +221,8 @@
                     </div>
                     <div class="col-6">Filters price etc</div>
                 </div>
-                <!-- Cards van en un forEach desde la col -->
-                <div class="row row-cols-2 g-md-4 text-center">
-                    <div class="col">
-                        <div class="card card_prod">
-                            <img src="/src/assets/images/ArbolAlmendro-TalagardenViveroSantiago.jpg"
-                                class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title fw-bold">Almendro</h5>
-                                <p class="card-text text-success">$10000</p>
-                                <button class="btn btn-success btn-primary_prod">Añadir al Carrito</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card card_prod">
-                            <img src="/src/assets/images/ArbolArandanos-TalagardenViveroSantiago.jpg"
-                                class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title fw-bold">Arándano</h5>
-                                <p class="card-text text-success">$20000</p>
-                                <button class="btn btn-success btn-primary_prod">Añadir al Carrito</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card card_prod">
-                            <img src="/src/assets/images/ArbolCaqui-TalagardenViveroSantiago.jpg" class="card-img-top"
-                                alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title fw-bold">Caqui</h5>
-                                <p class="card-text text-success">$10000</p>
-                                <button class="btn btn-success btn-primary_prod">Añadir al Carrito</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card card_prod">
-                            <img src="/src/assets/images/ArbolCerezo-TalagardenViveroSantiago.jpg" class="card-img-top"
-                                alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title fw-bold">Cerezo</h5>
-                                <p class="card-text text-success">$10000</p>
-                                <button class="btn btn-success btn-primary_prod">Añadir al Carrito</button>
-                            </div>
-                        </div>
-                    </div>
-
+                <div id="contenedor_productos" class="row row-cols-2 g-md-4 text-center">
+                    <!-- Aquí se van insertando las cards desde js -->
                 </div>
             </div>
         </div>
