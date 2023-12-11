@@ -10,7 +10,8 @@ const categorias = {
             cuidados: 'Requiere Sol o SemiSombra, No necesita tanta agua y resiste heladas no mayores de -5 grados.',
             iluminacion: [1, 3],
             stock: 10,
-            temporada: "Otoño/Primavera"
+            temporada: "Otoño/Primavera",
+            id: 'fru_alm'
         },
 
         arandano: {
@@ -22,7 +23,8 @@ const categorias = {
             cuidados: 'Requiere SemiSombra para darse bien, Requiere tierra ligeramente acida y resiste las heladas no mayores a -5 grados',
             iluminacion: [3],
             stock: 10,
-            temporada: "Otoño/Primavera"
+            temporada: "Otoño/Primavera",
+            id: 'fru_aran'
         },
         caqui: {
             nombre_prod: "Caqui",
@@ -33,7 +35,8 @@ const categorias = {
             cuidados: 'Requiere semiSombra y humedad para darse correctamente.',
             iluminacion: [3],
             stock: 10,
-            temporada: "Otoño"
+            temporada: "Otoño",
+            id: 'fru_caq'
         },
         cerezo: {
             nombre_prod: "Cerezo",
@@ -44,7 +47,8 @@ const categorias = {
             cuidados: 'Requiere semiSombra y humedad para darse correctamente.',
             iluminacion: [3],
             stock: 10,
-            temporada: "Primavera"
+            temporada: "Primavera",
+            id: 'fru_cer'
         },
         ciruelo: {
             nombre_prod: "Ciruelo",
@@ -55,7 +59,8 @@ const categorias = {
             cuidados: 'Requiere sol o semiSombra. No necesita tanta agua y resiste heladas no mayores de -5 grados.',
             iluminacion: [1, 3],
             stock: 10,
-            temporada: "Primavera"
+            temporada: "Primavera",
+            id: 'fru_ciru'
         },
 
         damasco: {
@@ -67,13 +72,14 @@ const categorias = {
             cuidados: 'Requiere sol o semiSombra. No necesita tanta agua y resiste heladas no menores de -5 grados.',
             iluminacion: [1, 3],
             stock: 10,
-            temporada: "Primavera"
+            temporada: "Primavera",
+            id: 'fru_dam'
         }
     }
 };
 
 function crearProducto(producto) {
-    const newProd = new Producto(producto.nombre_prod, producto.precio_prod, producto.altura, producto.img, producto.descripcion, producto.cuidados, producto.iluminacion, producto.stock, producto.temporada);
+    const newProd = new Producto(producto.nombre_prod, producto.precio_prod, producto.altura, producto.img, producto.descripcion, producto.cuidados, producto.iluminacion, producto.stock, producto.temporada, producto.id);
     return newProd;
 }
 
@@ -99,13 +105,13 @@ function mostrarProductos() {
     contenedorProductos.innerHTML = ``;
     objProductos.forEach((objProducto) => {
         contenedorProductos.innerHTML = contenedorProductos.innerHTML +
-            `<div class="col">
+            `<div id="${objProducto.id}" class="col">
                 <div class="card card_prod">
                     <img src="${objProducto.img}" class="card-img-top" alt="Foto de un ${objProducto.nombre}">
                     <div class="card-body">
                         <h5 class="card-title fw-bold">${objProducto.nombre}</h5>
                         <p class="card-text text-success">$${objProducto.precio}</p>
-                        <button class="btn btn-success btn-primary_prod">Añadir al Carrito</button>
+                        <button id="btn-${objProducto.id}"class="btn btn-success btn-primary_prod">Añadir al Carrito</button>
                     </div>
                 </div>
             </div>`
