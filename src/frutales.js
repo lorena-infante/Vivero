@@ -157,7 +157,7 @@ function dibujarCarrito() {
                         <div class="card-body">
                             <h5 class="card-title mb-1">${elemento.nombre}</h5>
                             <p class="card-text mb-1">$${elemento.precio}</p>
-                            <p class="card-text mb-1">1</p>
+                            <p class="card-text mb-1">Cantidad</p>
                         </div>
                     </div>
                     <div
