@@ -112,7 +112,7 @@ function mostrarProductos() {
                     <div class="card-body">
                         <h5 class="card-title fw-bold">${objProducto.nombre}</h5>
                         <p class="card-text text-success">$${objProducto.precio}</p>
-                        <button id="${objProducto.id}" class="btn btn-success btn-primary_prod add_cart">Añadir al Carrito</button>
+                        <button id="${objProducto.id}" class="btn btn-success btn-primary_prod add_cart" data-bs-toggle="modal" data-bs-target="#carritoModal">Añadir al Carrito</button>
                     </div>
                 </div>
             </div>`
