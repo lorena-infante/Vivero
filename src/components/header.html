@@ -37,7 +37,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contacto</a>
                     </li>
-                    <!--BTN CART AQUÍ DEBERÍA ESTAR EL COMPONENTE CART-->
+                    <!--BTN CART -->
                     <li class="btn_cart">
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-outline-success" data-bs-toggle="modal"
@@ -53,20 +53,33 @@
                                         <h5 class="modal-title" id="carritoModalLabel">Mi Carrito</h5>
                                     </div>
                                     <div class="modal-body">
-                                        <div id ="cart-container" class="container">
+                                        <div id="cart-container" class="container">
+                                            <div class="row"> 
+                                                <div class="col"> 
+                                                    <p class="p-5 mb-0 fw-bold text-center">
+                                                        El carrito está vacío
+                                                    </p>
+                                                </div>       
+                                            </div>
                                             <!--Aquí va el resumen del carrito-->
-                                            <div class="row">
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <div class="container">
+                                            <div class="row justify-content-around text-end pb-3">
                                                 <div class="col">
                                                     <h5 class="fw-bold">Subtotal</h5>
                                                 </div>
                                                 <div class="col">$$$$</div>
                                             </div>
+                                            <div class="row justify-content-between text-end">
+                                                <div class="col d-flex gap-3 justify-content-end">
+                                                    <button type="button" class="btn btn-outline-dark"
+                                                        data-bs-dismiss="modal">Cerrar</button><button type="button"
+                                                        class="btn btn-outline-success">Ir al carrito</button>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-outline-dark"
-                                            data-bs-dismiss="modal">Cerrar</button>
-                                        <button type="button" class="btn btn-outline-success">Ir al carrito</button>
                                     </div>
                                 </div>
                             </div>
