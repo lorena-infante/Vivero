@@ -124,54 +124,60 @@ mostrarProductos();
 contenedorProductos.addEventListener('click', function (e) {
     if (e.target.classList.contains('add_cart')) {
         const botonCarrito = e.target;
-        console.log(`botonCarrito.id:${botonCarrito.id}`);
         agregarCarrito(botonCarrito.id);
     }
 })
 
 let carrito = [];
 function agregarCarrito(id) {
-    let productoAgregado = productos.find((producto) => producto.id === id );
+    let productoAgregado = productos.find((producto) => producto.id === id);
     carrito.push(productoAgregado);
+    //guarda en LS el elemento del carrito seleccionado
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+
     dibujarCarrito();
 }
 
-let modalContenedor = document.getElementById('cart-container');
+
 
 function dibujarCarrito() {
+    let modalContenedor = document.getElementById('cart-container');
+    let getCarritoLS = JSON.parse(localStorage.getItem('carrito'));
+
     modalContenedor.innerHTML = ``;
-    carrito.forEach((elemento,index) => {
+    carrito.forEach((elemento, index) => {
         modalContenedor.innerHTML = modalContenedor.innerHTML + `
-        <div class="row row-producto">
-            <div class="card mb-3 p-2" style="max-width: 540px;">
-                <div class="row g-0 align-items-center">
-                    <div class="col-12 col-md-4">
-                        <img src="${elemento.img}"
-                            class="img-fluid rounded-start img-cover"
-                            alt="Imagen de ${elemento.nombre}">
-                    </div>
-                    <div class="col-6">
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold mb-1">${elemento.nombre}</h5>
-                            <p class="card-text text-success mb-1">$${elemento.precio}</p>
-                            <p class="card-text mb-1">Cantidad</p>
+            <div class="row row-producto">
+                <div class="card mb-3 p-2" style="max-width: 540px;">
+                    <div class="row g-0 align-items-center">
+                        <div class="col-12 col-md-4">
+                            <img src="${elemento.img}"
+                                class="img-fluid rounded-start img-cover"
+                                alt="Imagen de ${elemento.nombre}">
+                        </div>
+                        <div class="col-6">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold mb-1">${elemento.nombre}</h5>
+                                <p class="card-text text-success mb-1">$${elemento.precio}</p>
+                                <p class="card-text mb-1">Cantidad</p>
+                            </div>
+                        </div>
+                        <div
+                            class="col-6 col-md-2 align-items-center justify-content-center d-flex delete-btn-container">
+                            <button id="${index}-${elemento.id}" class="btn btn-outline-danger delete-btn">
+                                Eliminar
+                            </button>
                         </div>
                     </div>
-                    <div
-                        class="col-6 col-md-2 align-items-center justify-content-center d-flex delete-btn-container">
-                        <button id="${index}-${elemento.id}" class="btn btn-outline-danger delete-btn">
-                            Eliminar
-                        </button>
-                    </div>
                 </div>
-            </div>
-        </div>`
+            </div>`
     });
+
 }
 
 
 
 
 
-    
+
 
