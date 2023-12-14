@@ -11,7 +11,8 @@ const categorias = {
             iluminacion: [1, 3],
             stock: 10,
             temporada: "Otoño/Primavera",
-            id: 'fru_alm'
+            id: 'fru_alm',
+            cantidad: 0
         },
 
         arandano: {
@@ -24,7 +25,8 @@ const categorias = {
             iluminacion: [3],
             stock: 10,
             temporada: "Otoño/Primavera",
-            id: 'fru_aran'
+            id: 'fru_aran',
+            cantidad: 0
         },
         caqui: {
             nombre_prod: "Caqui",
@@ -36,7 +38,8 @@ const categorias = {
             iluminacion: [3],
             stock: 10,
             temporada: "Otoño",
-            id: 'fru_caq'
+            id: 'fru_caq',
+            cantidad: 0
         },
         cerezo: {
             nombre_prod: "Cerezo",
@@ -48,7 +51,8 @@ const categorias = {
             iluminacion: [3],
             stock: 10,
             temporada: "Primavera",
-            id: 'fru_cer'
+            id: 'fru_cer',
+            cantidad: 0
         },
         ciruelo: {
             nombre_prod: "Ciruelo",
@@ -60,7 +64,8 @@ const categorias = {
             iluminacion: [1, 3],
             stock: 10,
             temporada: "Primavera",
-            id: 'fru_ciru'
+            id: 'fru_ciru',
+            cantidad: 0
         },
 
         damasco: {
@@ -73,13 +78,14 @@ const categorias = {
             iluminacion: [1, 3],
             stock: 10,
             temporada: "Primavera",
-            id: 'fru_dam'
+            id: 'fru_dam',
+            cantidad: 0
         }
     }
 };
 
 function crearProducto(producto) {
-    const newProd = new Producto(producto.nombre_prod, producto.precio_prod, producto.altura, producto.img, producto.descripcion, producto.cuidados, producto.iluminacion, producto.stock, producto.temporada, producto.id);
+    const newProd = new Producto(producto.nombre_prod, producto.precio_prod, producto.altura, producto.img, producto.descripcion, producto.cuidados, producto.iluminacion, producto.stock, producto.temporada, producto.id, producto.cantidad);
     return newProd;
 }
 
@@ -94,7 +100,7 @@ const productos = [
 
 // Para usar el LS como persistencia invoco esta función sólo una vez. La dejo comentada para mostrar progreso
 
-// const guardarProductosEnLS = localStorage.setItem('producto',JSON.stringify(productos));
+//const guardarProductosEnLS = localStorage.setItem('producto',JSON.stringify(productos));
 
 // Variables / Constantes globales
 const objProductos = JSON.parse(localStorage.getItem('producto'));
@@ -120,7 +126,6 @@ function mostrarProductos() {
 }
 
 mostrarProductos();
-let quantity = 0;
 //Listener para obtener el id del btn
 contenedorProductos.addEventListener('click', (e) => {
     if (e.target.classList.contains('add_cart')) {
@@ -137,6 +142,8 @@ getCarritoLS !== null ? carrito = getCarritoLS : carrito = [];
 
 function agregarCarrito(id) {
     let productoAgregado = productos.find((producto) => producto.id === id);
+    productoAgregado.cantidad++;
+    
     carrito.push(productoAgregado);
     //guarda en LS el elemento del carrito seleccionado
     localStorage.setItem('carrito_LS', JSON.stringify(carrito));
@@ -144,9 +151,6 @@ function agregarCarrito(id) {
 
     dibujarCarrito();
 }
-
-
-
 
 let btnCarritoIcon = document.getElementById('btn-carrito-icon');
 btnCarritoIcon.addEventListener('click', dibujarCarrito());
@@ -181,7 +185,7 @@ function dibujarCarrito() {
                             <div class="card-body">
                                 <h5 class="card-title fw-bold mb-1">${elemento.nombre}</h5>
                                 <p id="precio_modal" class="card-text text-success mb-1">$${elemento.precio}</p>
-                                <p class="card-text mb-1 h6">Cantidad:</p>
+                                <p class="card-text mb-1 h6">Cantidad: ${elemento.cantidad}</p>
                             </div>
                         </div>
                         <div
@@ -200,7 +204,7 @@ function calcSubtotal(){
     let subTotalContainer = document.getElementById('subtotal_modal');
     let subtotal = 0;
     if (getCarritoLS !== null){
-        arrSubtotales = getCarritoLS.map((prod)=> prod.precio);//aqui multiplicar por cantidad
+        arrSubtotales = getCarritoLS.map((prod)=> prod.precio * prod.cantidad);
         const initValue = 0;
         subtotal = arrSubtotales.reduce(function(result, item){
                 return result + item;
