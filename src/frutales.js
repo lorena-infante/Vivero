@@ -148,7 +148,19 @@ btnCarritoIcon.addEventListener('click', dibujarCarrito());
 
 function dibujarCarrito() {
     let modalContenedor = document.getElementById('cart-container');
-    modalContenedor.innerHTML = ``;
+    if (carrito.length === 0) {
+        modalContenedor.innerHTML =
+         `  <div class="row"> 
+                <div class="col"> 
+                    <p class="p-5 mb-0 fw-bold text-center">
+                        El carrito está vacío
+                    </p>
+                </div>       
+            </div>`;
+    } else {
+        modalContenedor.innerHTML = ``;
+    }
+
     carrito.forEach((elemento, index) => {
         modalContenedor.innerHTML = modalContenedor.innerHTML + `
             <div class="row row-producto">
