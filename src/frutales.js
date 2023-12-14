@@ -128,13 +128,24 @@ contenedorProductos.addEventListener('click', function (e) {
     }
 })
 
-let carrito = [];
+
+let carrito;
+getCarritoLS = JSON.parse(localStorage.getItem('carrito_LS'))
+if (getCarritoLS !== null){
+    carrito = getCarritoLS;
+}else {
+    carrito = [];
+    console.log(carrito);
+}
+console.log(getCarritoLS);
+
 function agregarCarrito(id) {
     let productoAgregado = productos.find((producto) => producto.id === id);
     carrito.push(productoAgregado);
     //guarda en LS el elemento del carrito seleccionado
-    localStorage.setItem('carrito', JSON.stringify(carrito));
-
+    localStorage.setItem('carrito_LS', JSON.stringify(carrito));
+    getCarritoLS = JSON.parse(localStorage.getItem('carrito_LS'));
+    console.log(getCarritoLS);
     dibujarCarrito();
 }
 
@@ -142,8 +153,6 @@ function agregarCarrito(id) {
 
 function dibujarCarrito() {
     let modalContenedor = document.getElementById('cart-container');
-    let getCarritoLS = JSON.parse(localStorage.getItem('carrito'));
-
     modalContenedor.innerHTML = ``;
     carrito.forEach((elemento, index) => {
         modalContenedor.innerHTML = modalContenedor.innerHTML + `
