@@ -120,7 +120,8 @@ function mostrarProductos() {
 }
 
 mostrarProductos();
-
+let quantity = 0;
+//Listener para obtener el id del btn
 contenedorProductos.addEventListener('click', (e) => {
     if (e.target.classList.contains('add_cart')) {
         const botonCarrito = e.target;
@@ -133,6 +134,7 @@ let carrito;
 getCarritoLS = JSON.parse(localStorage.getItem('carrito_LS'));
 getCarritoLS !== null ? carrito = getCarritoLS : carrito = [];
 
+
 function agregarCarrito(id) {
     let productoAgregado = productos.find((producto) => producto.id === id);
     carrito.push(productoAgregado);
@@ -143,10 +145,14 @@ function agregarCarrito(id) {
     dibujarCarrito();
 }
 
+
+
+
 let btnCarritoIcon = document.getElementById('btn-carrito-icon');
 btnCarritoIcon.addEventListener('click', dibujarCarrito());
 
 function dibujarCarrito() {
+    calcSubtotal();
     let modalContenedor = document.getElementById('cart-container');
     if (carrito.length === 0) {
         modalContenedor.innerHTML =
@@ -174,8 +180,8 @@ function dibujarCarrito() {
                         <div class="col-6">
                             <div class="card-body">
                                 <h5 class="card-title fw-bold mb-1">${elemento.nombre}</h5>
-                                <p class="card-text text-success mb-1">$${elemento.precio}</p>
-                                <p class="card-text mb-1">Cantidad</p>
+                                <p id="precio_modal" class="card-text text-success mb-1">$${elemento.precio}</p>
+                                <p class="card-text mb-1 h6">Cantidad:</p>
                             </div>
                         </div>
                         <div
@@ -188,10 +194,33 @@ function dibujarCarrito() {
                 </div>
             </div>`
     });
-
 }
 
-
+function calcSubtotal(){
+    let subTotalContainer = document.getElementById('subtotal_modal');
+    let subtotal = 0;
+    if (getCarritoLS !== null){
+        arrSubtotales = getCarritoLS.map((prod)=> prod.precio);//aqui multiplicar por cantidad
+        const initValue = 0;
+        subtotal = arrSubtotales.reduce(function(result, item){
+                return result + item;
+            },initValue);
+    
+        subTotalContainer.innerHTML = `
+        <div class="col">
+            <h5 class="fw-bold">Subtotal</h5>
+        </div>
+        <div class="col fw-bold">$${subtotal}</div>
+        `
+    }else {
+        subTotalContainer.innerHTML = `
+        <div class="col">
+            <h5 class="fw-bold">Subtotal</h5>
+        </div>
+        <div class="col fw-bold">$${subtotal}</div>
+        `
+    }
+}
 
 
 
