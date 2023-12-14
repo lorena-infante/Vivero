@@ -121,7 +121,7 @@ function mostrarProductos() {
 
 mostrarProductos();
 
-contenedorProductos.addEventListener('click', function (e) {
+contenedorProductos.addEventListener('click', (e) => {
     if (e.target.classList.contains('add_cart')) {
         const botonCarrito = e.target;
         agregarCarrito(botonCarrito.id);
@@ -130,14 +130,8 @@ contenedorProductos.addEventListener('click', function (e) {
 
 
 let carrito;
-getCarritoLS = JSON.parse(localStorage.getItem('carrito_LS'))
-if (getCarritoLS !== null){
-    carrito = getCarritoLS;
-}else {
-    carrito = [];
-    console.log(carrito);
-}
-console.log(getCarritoLS);
+getCarritoLS = JSON.parse(localStorage.getItem('carrito_LS'));
+getCarritoLS !== null ? carrito = getCarritoLS : carrito = [];
 
 function agregarCarrito(id) {
     let productoAgregado = productos.find((producto) => producto.id === id);
@@ -145,11 +139,12 @@ function agregarCarrito(id) {
     //guarda en LS el elemento del carrito seleccionado
     localStorage.setItem('carrito_LS', JSON.stringify(carrito));
     getCarritoLS = JSON.parse(localStorage.getItem('carrito_LS'));
-    console.log(getCarritoLS);
+
     dibujarCarrito();
 }
 
-
+let btnCarritoIcon = document.getElementById('btn-carrito-icon');
+btnCarritoIcon.addEventListener('click', dibujarCarrito());
 
 function dibujarCarrito() {
     let modalContenedor = document.getElementById('cart-container');
