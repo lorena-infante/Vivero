@@ -141,10 +141,16 @@ getCarritoLS !== null ? carrito = getCarritoLS : carrito = [];
 
 
 function agregarCarrito(id) {
-    let productoAgregado = productos.find((producto) => producto.id === id);
-    productoAgregado.cantidad++;
-    
-    carrito.push(productoAgregado);
+
+    let productoEnCarrito = carrito.find(producto => producto.id === id);
+    if (productoEnCarrito) {
+        productoEnCarrito.cantidad++
+    } else {
+        let productoAgregado = productos.find((producto) => producto.id === id);
+        productoAgregado.cantidad = 1;
+        carrito.push(productoAgregado);
+    }
+
     //guarda en LS el elemento del carrito seleccionado
     localStorage.setItem('carrito_LS', JSON.stringify(carrito));
     getCarritoLS = JSON.parse(localStorage.getItem('carrito_LS'));
@@ -160,7 +166,7 @@ function dibujarCarrito() {
     let modalContenedor = document.getElementById('cart-container');
     if (carrito.length === 0) {
         modalContenedor.innerHTML =
-         `  <div class="row"> 
+            `  <div class="row"> 
                 <div class="col"> 
                     <p class="p-5 mb-0 fw-bold text-center">
                         El carrito está vacío
@@ -200,23 +206,23 @@ function dibujarCarrito() {
     });
 }
 
-function calcSubtotal(){
+function calcSubtotal() {
     let subTotalContainer = document.getElementById('subtotal_modal');
     let subtotal = 0;
-    if (getCarritoLS !== null){
-        arrSubtotales = getCarritoLS.map((prod)=> prod.precio * prod.cantidad);
+    if (getCarritoLS !== null) {
+        arrSubtotales = getCarritoLS.map((prod) => prod.precio * prod.cantidad);
         const initValue = 0;
-        subtotal = arrSubtotales.reduce(function(result, item){
-                return result + item;
-            },initValue);
-    
+        subtotal = arrSubtotales.reduce(function (result, item) {
+            return result + item;
+        }, initValue);
+
         subTotalContainer.innerHTML = `
         <div class="col">
             <h5 class="fw-bold">Subtotal</h5>
         </div>
         <div class="col fw-bold">$${subtotal}</div>
         `
-    }else {
+    } else {
         subTotalContainer.innerHTML = `
         <div class="col">
             <h5 class="fw-bold">Subtotal</h5>
