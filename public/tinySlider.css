@@ -1,0 +1,8 @@
+#tns1 > .tns-item {
+    max-height: 15rem;
+}
+
+.img-slider {
+    object-fit: cover;
+    height: 100%;
+}
