@@ -32,8 +32,12 @@
     <link rel="stylesheet" href="/styles/header.css">
     <link rel="stylesheet" href="/styles/carritoModal.css">
     <link rel="stylesheet" href="/styles/footer.css">
-    <script defer src="/src/main.js"></script>
 
+    <!-- Glider -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css">
+    <!--tinySlider-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
+<!--[if (lt IE 9)]><script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.helper.ie8.js"></script><![endif]-->
 </head>
 
 <body>
@@ -63,7 +67,7 @@
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <li><a class="dropdown-item" href="/src/components/frutales.html">Árboles</a></li>
                                 <li><a class="dropdown-item" href="#">Plantas</a></li>
-                                <li><a class="dropdown-item" href="#">Arbustos</a></li>     
+                                <li><a class="dropdown-item" href="#">Arbustos</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
@@ -75,8 +79,8 @@
                         <!--BTN CART -->
                         <li class="btn_cart">
                             <!-- Button trigger modal -->
-                            <button type="button" id="btn-carrito-icon" class="btn btn-outline-success" data-bs-toggle="modal"
-                                data-bs-target="#carritoModal">
+                            <button type="button" id="btn-carrito-icon" class="btn btn-outline-success"
+                                data-bs-toggle="modal" data-bs-target="#carritoModal">
                                 🛒
                             </button>
                             <!-- Modal -->
@@ -94,9 +98,10 @@
                                         </div>
                                         <div class="modal-footer">
                                             <div class="container">
-                                                <div id="subtotal_modal" class="row justify-content-around text-end pb-3">
+                                                <div id="subtotal_modal"
+                                                    class="row justify-content-around text-end pb-3">
                                                     <!--subtotal-->
-                                                </div> 
+                                                </div>
                                                 <div class="row justify-content-between text-end">
                                                     <div class="col d-flex gap-3 justify-content-end">
                                                         <button type="button" class="btn btn-outline-dark"
@@ -158,6 +163,34 @@
             </button>
         </div>
     </div>
+    <!--  Glider -->
+    <div class="container glider-container">
+        <div class="row glider">
+            <div class="col">
+                <img src="/src/assets/images/ArbolCerezo-TalagardenViveroSantiago.jpg" alt="">
+            </div>
+            <div class="col">
+                <img src="/src/assets/images/ArbolCerezo-TalagardenViveroSantiago.jpg" alt="">
+            </div>
+            <div class="col">
+                <img src="/src/assets/images/ArbolCerezo-TalagardenViveroSantiago.jpg" alt="">
+            </div>
+        </div>
+        <button aria-label="Previous" class="glider-prev">«</button>
+        <button aria-label="Next" class="glider-next">»</button>
+        <div role="tablist" class="dots"></div>
+    </div>
+<!--tinySlider-->
+<div class="container">
+    <div class="row my-slider">
+        <div class="col">1</div>
+        <div class="col">2</div>
+        <div class="col">3</div>
+        <button aria-label="Previous" class="prevButton"></button>
+        <button aria-label="Next" class="nextButton"></button>
+      </div>
+</div>
+<!--end tinySlider-->
     <!--Footer-->
     <div class="footer d-flex flex-row mt-5 p-3">
         <div class="container">
@@ -192,6 +225,12 @@
         </div>
 
     </div>
+    <!-- glider js -->
+    <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
+    <script src="./glider.js"></script>
+    <!--tinySlider-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+<script src="./tinySlider.js"></script>
 </body>
 
 </html>
