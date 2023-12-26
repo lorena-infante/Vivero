@@ -6,6 +6,9 @@ var slider = tns({
   gutter: 3,
   loop: true,
   speed: 400,
+  controlsPosition:"bottom",
+  controlsText: ['<','>'],
+  navPosition:"bottom",
   responsive: {
     375: {
       items: 1.5,
@@ -14,10 +17,10 @@ var slider = tns({
       speed: 300,
     },
     576: {
-        items: 2,
-        gutter: 0,
-        speed: 300,
-      },
+      items: 2,
+      gutter: 0,
+      speed: 300,
+    },
     768: {
       items: 3,
       gutter: 1,
@@ -26,7 +29,7 @@ var slider = tns({
     992: {
       items: 4,
       gutter: 0,
-      viewportMax: 100,
+      viewportMax: 100
     },
     1200: {
       items: 5,

@@ -62,3 +62,7 @@ header {
 .card_prod {
     border: none;
 }
+.text-green {
+    color: var(--hunterGreen);
+    text-align: center;
+}
