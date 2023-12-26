@@ -168,11 +168,11 @@
             </div>
         </div>
         <div class="row my-slider">
-                <div class="col">
-                    <!-- <a href="/src/components/frutales.html"> -->
-                    <img src="/src/assets/images/ArbolCerezo-TalagardenViveroSantiago.jpg" alt="" class="img-slider">
-                    <!-- </a> -->
-                </div>
+            <div class="col">
+                <!-- <a href="/src/components/frutales.html"> -->
+                <img src="/src/assets/images/ArbolCerezo-TalagardenViveroSantiago.jpg" alt="" class="img-slider">
+                <!-- </a> -->
+            </div>
             <div class="col">
                 <img src="/src/assets/images/PlantasHortensia-TalagardenViveroSantiago.jpg" alt="" class="img-slider">
             </div>
@@ -189,10 +189,48 @@
         <div class="row justify-content-center align-items-center text-center">
             <div class="col">
                 <h3 class="fw-bold mb-4">¿Tienes preguntas?</h3>
-                <button class="btn btn-success">¡Contáctanos aquí!</button>
+                <!-- modal contacto -->
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                    data-bs-whatever="@talagarden">¡Contáctanos aquí!</button>
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title text-green" id="exampleModalLabel">Nuevo Mensaje</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Cerrar"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="recipient-name" class="col-form-label text-green">Escribe tu
+                                            correo:</label>
+                                        <input type="text" class="form-control" id="recipient-name"
+                                            placeholder="juan@gmail.com">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="message-text" class="col-form-label text-green">Escribe tu
+                                            Mensaje:</label>
+                                        <textarea class="form-control" id="message-text"
+                                            placeholder="Tu mensaje aquí"></textarea>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-outline-dark"
+                                    data-bs-dismiss="modal">Cerrar</button>
+                                <button type="button" class="btn btn-outline-success"
+                                    data-bs-dismiss="modal">Enviar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- fin modal contacto -->
             </div>
         </div>
     </div>
+    <!-- fin contacto banner -->
     <!--Footer-->
     <div class="footer d-flex flex-row mt-5 p-3">
         <div class="container">
