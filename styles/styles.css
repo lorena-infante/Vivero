@@ -66,6 +66,12 @@ header {
     color: var(--hunterGreen);
     text-align: center;
 }
+
+/*Tiny Slider anchors*/
+.decoration-none, .decoration-none:hover {
+    color: var(--hunterGreen)!important;
+    text-decoration: none !important;
+}
 /* contact banner */
 .contact {
     background: var(--verdeOscuro);
