@@ -32,7 +32,7 @@ var slider = tns({
       viewportMax: 100
     },
     1200: {
-      items: 5,
+      items: 4,
       gutter: 3,
       viewportMax: 100,
     },
