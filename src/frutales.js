@@ -1,14 +1,14 @@
 //Datos a persistir
 let data_arr = [];
-let spinner = document.getElementById('spinner');
+let spinner = document.getElementById("spinner");
 
 spinner.innerHTML = `<div class="spinner-border text-success" role="status">
 <span class="visually-hidden">Loading...</span>
-</div>`
+</div>`;
 
 //debugger;
-
-fetch("/src/data.json")
+//Test con fetch
+/* fetch("/src/data.json")
   .then((res) => {
     if (!res.ok) {
       //console.log('error');
@@ -29,7 +29,31 @@ fetch("/src/data.json")
   .finally(() => {
     spinner.innerHTML =``;
     console.log('terminó la promesa');
-});
+}); */
+
+//Async/Await
+const getProds = async () => {
+  let res = await fetch("/src/data.json");
+  try {
+    if (!res.ok) {
+      throw new Error(`Error: ${res.status} ${res.statusText}`);
+    }
+    let data = await res.json();
+    console.log(data);
+    data_arr.push(data);
+    data_arr.forEach((item) => {
+      for (prop in item) {
+        console.log(prop, item[prop]);
+      }
+    });
+  } catch (error) {
+    console.error(error);
+  } finally {
+    spinner.innerHTML = ``;
+    console.log("terminó la promesa");
+  }
+};
+getProds();
 
 const categorias = {
   frutales: {
