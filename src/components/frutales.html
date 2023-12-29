@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -37,7 +37,6 @@
     <script defer src="/src/producto.js"></script>
     <script defer src="/src/frutales.js"></script>
     <script defer src="/src/carritoModal.js"></script>
-    <script defer src="/src/main.js"></script>
 
 </head>
 
@@ -68,7 +67,7 @@
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <li><a class="dropdown-item" href="/src/components/frutales.html">Árboles</a></li>
                                 <li><a class="dropdown-item" href="#">Plantas</a></li>
-                                <li><a class="dropdown-item" href="#">Arbustos</a></li>     
+                                <li><a class="dropdown-item" href="#">Arbustos</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
@@ -80,8 +79,8 @@
                         <!--BTN CART -->
                         <li class="btn_cart">
                             <!-- Button trigger modal -->
-                            <button type="button" id="btn-carrito-icon" class="btn btn-outline-success" data-bs-toggle="modal"
-                                data-bs-target="#carritoModal">
+                            <button type="button" id="btn-carrito-icon" class="btn btn-outline-success"
+                                data-bs-toggle="modal" data-bs-target="#carritoModal">
                                 🛒
                             </button>
                             <!-- Modal -->
@@ -99,9 +98,10 @@
                                         </div>
                                         <div class="modal-footer">
                                             <div class="container">
-                                                <div id="subtotal_modal" class="row justify-content-around text-end pb-3">
+                                                <div id="subtotal_modal"
+                                                    class="row justify-content-around text-end pb-3">
                                                     <!--subtotal-->
-                                                </div> 
+                                                </div>
                                                 <div class="row justify-content-between text-end">
                                                     <div class="col d-flex gap-3 justify-content-end">
                                                         <button type="button" class="btn btn-outline-dark"
@@ -199,6 +199,7 @@
                     <div class="col-6">Filters price etc</div>
                 </div>
                 <div id="contenedor_productos" class="row row-cols-2 g-md-4 text-center">
+                    <div id="spinner"></div>
                     <!-- Aquí se van insertando las cards desde js -->
                 </div>
             </div>
