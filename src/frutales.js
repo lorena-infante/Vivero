@@ -32,7 +32,7 @@ spinner.innerHTML = `<div class="spinner-border text-success" role="status">
 }); */
 
 //Async/Await
-const getProds = async () => {
+/* const getProds = async () => {
   let res = await fetch("/src/data.json");
   try {
     if (!res.ok) {
@@ -53,7 +53,7 @@ const getProds = async () => {
     console.log("terminó la promesa");
   }
 };
-getProds();
+getProds(); */
 
 const categorias = {
   frutales: {
@@ -185,6 +185,7 @@ const objProductos = JSON.parse(localStorage.getItem("producto"));
 let contenedorProductos = document.getElementById("contenedor_productos");
 
 function mostrarProductos() {
+    mostrarCantidadProd();
   contenedorProductos.innerHTML = ``;
   objProductos.forEach((objProducto) => {
     contenedorProductos.innerHTML =
@@ -203,6 +204,14 @@ function mostrarProductos() {
 }
 
 mostrarProductos();
+
+function mostrarCantidadProd(){
+    let prodsPorPag = objProductos.length;
+    let cantidadProdsTxt = document.getElementById('quantity');
+    cantidadProdsTxt.innerHTML = `${prodsPorPag} Productos`
+}
+
+
 //Listener para obtener el id del btn
 contenedorProductos.addEventListener("click", (e) => {
   if (e.target.classList.contains("add_cart")) {
