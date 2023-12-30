@@ -185,7 +185,6 @@ const objProductos = JSON.parse(localStorage.getItem("producto"));
 let contenedorProductos = document.getElementById("contenedor_productos");
 
 function mostrarProductos() {
-    mostrarCantidadProd();
   contenedorProductos.innerHTML = ``;
   objProductos.forEach((objProducto) => {
     contenedorProductos.innerHTML =
@@ -204,15 +203,29 @@ function mostrarProductos() {
 }
 
 mostrarProductos();
+mostrarCantidadProd();
 
-function mostrarCantidadProd(){
-    let prodsPorPag = objProductos.length;
-    let cantidadProdsTxt = document.getElementById('quantity');
-    cantidadProdsTxt.innerHTML = `${prodsPorPag} Productos`
+function mostrarCantidadProd() {
+  let prodsPorPag = objProductos.length;
+  let cantidadProdsTxt = document.getElementById("quantity");
+  cantidadProdsTxt.innerHTML = `${prodsPorPag} Productos`;
 }
 
+// Ordenando los productos por precio
+let selectSort = document.getElementById('sorter');
 
-//Listener para obtener el id del btn
+
+// Ordenar de mayor a menor
+selectSort.addEventListener('change',(e)=>{
+    let value =  e.target.value;
+    console.log(value);
+});
+
+
+
+
+// Funciones para el carrito
+//Listener para obtener el id del btn add to cart
 contenedorProductos.addEventListener("click", (e) => {
   if (e.target.classList.contains("add_cart")) {
     const botonCarrito = e.target;

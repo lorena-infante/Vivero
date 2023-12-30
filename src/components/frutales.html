@@ -139,7 +139,14 @@
                     <div class="col-6">
                         <h5 id="quantity" class="fw-bold"></h5>
                     </div>
-                    <div class="col-6">Filters price etc</div>
+                    <div class="col-6">
+                    <label for="sorter" class="fw-bold mb-3">Filtrar por precio:</label>
+                    <select id="sorter" name="filtro" class="form-select" aria-label="Ordenar por precio">
+                        <option id="default_val" value="default" data-order-default>Por defecto</option>
+                        <option id="ltg_val" value="ltg" data-order-ltg>De menor a mayor</option>
+                        <option id="gtl_val" value="gtl" data-order-gtl>De mayor a menor</option>
+                    </select>
+                </div>
                 </div>
                 <div id="contenedor_productos" class="row row-cols-2 g-md-4 text-center">
                     <div id="spinner"></div>
