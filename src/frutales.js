@@ -212,17 +212,80 @@ function mostrarCantidadProd() {
 }
 
 // Ordenando los productos por precio
-let selectSort = document.getElementById('sorter');
+let selectSort = document.getElementById("sorter");
 
+// Ordenar por defecto
+function sortByDefault() {
+  contenedorProductos.innerHTML = ``;
+  objProductos.forEach((objProducto) => {
+    contenedorProductos.innerHTML =
+      contenedorProductos.innerHTML +
+      `<div id="${objProducto.id}" class="col">
+                <div class="card card_prod">
+                    <img src="${objProducto.img}" class="card-img-top" alt="Foto de un ${objProducto.nombre}">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">${objProducto.nombre}</h5>
+                        <p class="card-text text-success">$${objProducto.precio}</p>
+                        <button id="${objProducto.id}" class="btn btn-success btn-primary_prod add_cart" data-bs-toggle="modal" data-bs-target="#carritoModal">Añadir al Carrito</button>
+                    </div>
+                </div>
+            </div>`;
+  });
+}
 
-// Ordenar de mayor a menor
-selectSort.addEventListener('change',(e)=>{
-    let value =  e.target.value;
-    console.log(value);
+//de menor a mayor precio
+function sortByLTG(){
+    const menorAMayor = objProductos.toSorted((a,b) => a.precio - b.precio);
+    contenedorProductos.innerHTML = ``;
+    menorAMayor.forEach((objProducto) => {
+    contenedorProductos.innerHTML =
+      contenedorProductos.innerHTML +
+      `<div id="${objProducto.id}" class="col">
+                <div class="card card_prod">
+                    <img src="${objProducto.img}" class="card-img-top" alt="Foto de un ${objProducto.nombre}">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">${objProducto.nombre}</h5>
+                        <p class="card-text text-success">$${objProducto.precio}</p>
+                        <button id="${objProducto.id}" class="btn btn-success btn-primary_prod add_cart" data-bs-toggle="modal" data-bs-target="#carritoModal">Añadir al Carrito</button>
+                    </div>
+                </div>
+            </div>`;
+  });
+
+}
+
+//de mayor a menor precio
+function sortByGTL(){
+    const mayorAMenor = objProductos.toSorted((a,b) => b.precio - a.precio);
+    contenedorProductos.innerHTML = ``;
+    mayorAMenor.forEach((objProducto) => {
+    contenedorProductos.innerHTML =
+      contenedorProductos.innerHTML +
+      `<div id="${objProducto.id}" class="col">
+                <div class="card card_prod">
+                    <img src="${objProducto.img}" class="card-img-top" alt="Foto de un ${objProducto.nombre}">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">${objProducto.nombre}</h5>
+                        <p class="card-text text-success">$${objProducto.precio}</p>
+                        <button id="${objProducto.id}" class="btn btn-success btn-primary_prod add_cart" data-bs-toggle="modal" data-bs-target="#carritoModal">Añadir al Carrito</button>
+                    </div>
+                </div>
+            </div>`;
+  });
+
+}
+
+selectSort.addEventListener("change", (e) => {
+  let value = e.target.value;
+  //console.log(value);
+  if (value === "default") {
+    sortByDefault();
+  } else if (value === "ltg") {
+    sortByLTG();
+  } else if (value === "gtl") {
+    sortByGTL();
+  }
 });
-
-
-
 
 // Funciones para el carrito
 //Listener para obtener el id del btn add to cart
