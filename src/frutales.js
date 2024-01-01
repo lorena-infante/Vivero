@@ -234,10 +234,10 @@ function sortByDefault() {
 }
 
 //de menor a mayor precio
-function sortByLTG(){
-    const menorAMayor = objProductos.toSorted((a,b) => a.precio - b.precio);
-    contenedorProductos.innerHTML = ``;
-    menorAMayor.forEach((objProducto) => {
+function sortByLTG() {
+  const menorAMayor = objProductos.toSorted((a, b) => a.precio - b.precio);
+  contenedorProductos.innerHTML = ``;
+  menorAMayor.forEach((objProducto) => {
     contenedorProductos.innerHTML =
       contenedorProductos.innerHTML +
       `<div id="${objProducto.id}" class="col">
@@ -251,14 +251,13 @@ function sortByLTG(){
                 </div>
             </div>`;
   });
-
 }
 
 //de mayor a menor precio
-function sortByGTL(){
-    const mayorAMenor = objProductos.toSorted((a,b) => b.precio - a.precio);
-    contenedorProductos.innerHTML = ``;
-    mayorAMenor.forEach((objProducto) => {
+function sortByGTL() {
+  const mayorAMenor = objProductos.toSorted((a, b) => b.precio - a.precio);
+  contenedorProductos.innerHTML = ``;
+  mayorAMenor.forEach((objProducto) => {
     contenedorProductos.innerHTML =
       contenedorProductos.innerHTML +
       `<div id="${objProducto.id}" class="col">
@@ -272,7 +271,6 @@ function sortByGTL(){
                 </div>
             </div>`;
   });
-
 }
 
 selectSort.addEventListener("change", (e) => {
@@ -334,12 +332,11 @@ function dibujarCarrito() {
   } else {
     modalContenedor.innerHTML = ``;
   }
-
   carrito.forEach((elemento, index) => {
     modalContenedor.innerHTML =
       modalContenedor.innerHTML +
       `
-            <div class="row row-producto">
+            <div class="row row-producto" data-id ="${elemento.id}">
                 <div class="card mb-3 p-2" style="max-width: 540px;">
                     <div class="row g-0 align-items-center">
                         <div class="col-12 col-md-4">
@@ -356,7 +353,7 @@ function dibujarCarrito() {
                         </div>
                         <div
                             class="col-6 col-md-2 align-items-center justify-content-center d-flex delete-btn-container">
-                            <button id="${index}-${elemento.id}" class="btn btn-outline-danger delete-btn">
+                            <button data-id="${elemento.id}" class="btn btn-outline-danger delete-btn">
                                 Eliminar
                             </button>
                         </div>
@@ -365,6 +362,28 @@ function dibujarCarrito() {
             </div>`;
   });
 }
+
+//rows a borrar
+let btnEliminar = document.querySelectorAll(".delete-btn");
+let rowProd = document.querySelectorAll(".row-producto");
+let rowProdArr = Array.from(rowProd);
+let rowToDeleteID;
+let btnToDeleteID;
+
+
+//eliminar prod
+btnEliminar.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    console.log("btn: ", e.target.dataset.id);
+    btnToDeleteID = e.target.dataset.id;
+    
+    return btnToDeleteID;
+    //rowToDeleteID = rowProdArr.find((row) => { row.dataset.id === btnToDeleteID });
+    //console.log('rowToDeleteID: ', rowToDeleteID);
+  });
+
+});
+
 
 function calcSubtotal() {
   let subTotalContainer = document.getElementById("subtotal_modal");
