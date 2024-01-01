@@ -1,0 +1,79 @@
+:root {
+    --fontBase: 'Open Sans', sans-serif;
+    --fontSecond: 'Lato', sans-serif;
+    /*font-weight font-size/line-height font-family*/
+    --title: bold 40px/ normal var(--fontBase);
+    --subtitle: 600 21px/normal var(--fontBase);
+    --titleMobile: bold 30px/5px var(--fontBase);
+    --body: 20px/ normal var(--fontSecond);
+    --verdeOscuro: #132A13;
+    --hunterGreen: #31572C;
+    --sapGreen: #4F772D;
+    --olivine: #90A955;
+    --keyLime: #ECF39E;
+    --white: #FFFFFF;
+    --black: #000000;
+    --brown: #4C260C;
+    --voOpacity: rgba(19, 42, 19, 0.8);
+
+
+}
+
+body {
+    font: var(--body);
+    /*por defecto*/
+    color: var(--verdeOscuro);
+    /*por defecto*/
+    background-color: var(--white);
+    margin: 0px;
+}
+header {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background-color: var(--white);
+}
+
+
+.img-carousel-home {
+    height: 50vh;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.9;
+}
+
+.carousel-caption {
+    position: absolute;
+    right: 15%;
+    bottom: 1.25rem;
+    left: 15%;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    color: var(--hunterGreen);
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-primary_prod {
+    background-color: var(--hunterGreen);
+    border: none;
+}
+
+.card_prod {
+    border: none;
+}
+.text-green {
+    color: var(--hunterGreen);
+    text-align: center;
+}
+
+/*Tiny Slider anchors*/
+.decoration-none, .decoration-none:hover {
+    color: var(--hunterGreen)!important;
+    text-decoration: none !important;
+}
+/* contact banner */
+.contact {
+    background: var(--verdeOscuro);
+    color: white;
+}

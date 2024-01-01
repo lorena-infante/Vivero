@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talagarden - Vivero 🌳</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!--Google Fonts Open Sans-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Poppins:wght@500;700&display=swap"
+        rel="stylesheet">
+    <!--Google Fonts Lato-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Open+Sans:wght@300;400;600;700&family=Poppins:wght@500;700&display=swap"
+        rel="stylesheet">
+    <!--favicon-->
+    <link rel="icon" href="/public/favicon.png">
+    <!-- CSS and JS-->
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/frutales.css">
+    <link rel="stylesheet" href="/styles/header.css">
+    <link rel="stylesheet" href="/styles/carritoModal.css">
+    <link rel="stylesheet" href="/styles/footer.css">
+    <!-- JS productos -->
+    <script defer src="/src/producto.js"></script>
+    <script defer src="/src/frutales.js"></script>
+    <script defer src="/src/carritoModal.js"></script>
+
+</head>
+
+<body>
+    <!--Insertar aquí el header comp-->
+    <header id="header-menu">
+        <nav class="navbar navbar-expand-lg navbar-light p-0 bg-header">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/public/index.html">
+                    <img src="/src/assets/logo/LogoSinFondo-TalagardenViveroSantiago.png" alt="Logo Talagarden"
+                        width="150" class="d-inline-block align-text-top">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/public/index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdownMenuLink"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Catálogo
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="/src/components/frutales.html">Árboles</a></li>
+                                <li><a class="dropdown-item" href="#">Plantas</a></li>
+                                <li><a class="dropdown-item" href="#">Arbustos</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0)">Sobre Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contacto</a>
+                        </li>
+                        <!--BTN CART -->
+                        <li class="btn_cart">
+                            <!-- Button trigger modal -->
+                            <button type="button" id="btn-carrito-icon" class="btn btn-outline-success"
+                                data-bs-toggle="modal" data-bs-target="#carritoModal">
+                                🛒
+                            </button>
+                            <!-- Modal -->
+                            <div class="modal fade" id="carritoModal" tabindex="-1" aria-labelledby="carritoModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-scrollable">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="carritoModalLabel">Mi Carrito</h5>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div id="cart-container" class="container">
+                                                <!--Aquí va el resumen del carrito-->
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <div class="container">
+                                                <div id="subtotal_modal"
+                                                    class="row justify-content-around text-end pb-3">
+                                                    <!--subtotal-->
+                                                </div>
+                                                <div class="row justify-content-between text-end">
+                                                    <div class="col d-flex gap-3 justify-content-end">
+                                                        <button type="button" class="btn btn-outline-dark"
+                                                            data-bs-dismiss="modal">Cerrar</button><button type="button"
+                                                            class="btn btn-outline-success">Ir al carrito</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!--Fin btn Cart-->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!--Banner frutales-->
+    <div class="banner_container">
+        <img src="/src/assets/images/ArbolCerezo-TalagardenViveroSantiago.jpg" alt="imagen de árbol con frutos"
+            class="w-100 banner-img">
+    </div>
+    <div class="container">
+        <div class="row my-5 gx-md-5">
+            <div class="col-12 products">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h1 class="fw-bold h3 mb-3">Árboles Frutales</h1>
+                    </div>
+
+                </div>
+                <div class="row my-3">
+                    <div class="col-6">
+                        <h5 id="quantity" class="fw-bold"></h5>
+                    </div>
+                    <div class="col-6">
+                    <label for="sorter" class="fw-bold mb-3">Filtrar por precio:</label>
+                    <select id="sorter" name="filtro" class="form-select" aria-label="Ordenar por precio">
+                        <option id="default_val" value="default" data-order-default>Por defecto</option>
+                        <option id="ltg_val" value="ltg" data-order-ltg>De menor a mayor</option>
+                        <option id="gtl_val" value="gtl" data-order-gtl>De mayor a menor</option>
+                    </select>
+                </div>
+                </div>
+                <div id="contenedor_productos" class="row row-cols-2 g-md-4 text-center">
+                    <div id="spinner"></div>
+                    <!-- Aquí se van insertando las cards desde js -->
+                </div>
+            </div>
+        </div>
+        <div class="row title_related p-2 mb-3">
+            <h3 class="fw-bold my-3">Productos Relacionados</h3>
+        </div>
+        <div class="row related_prod">
+            <div class="col">
+                <div class="card-group gap-2">
+                    <div class="card">
+                        <img src="/src/assets/images/ArbustosCoronaDePoeta-TalagardenViveroSantiago.jpg"
+                            class="card-img-top" alt="Arbusto">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Arbusto Corona Del Poeta</h5>
+                            <p class="card-text">This card has supporting text below as a natural lead-in to additional
+                                content.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="/src/assets/images/ArbustosBugambilia-TalagardenViveroSantiago.jpg"
+                            class="card-img-top" alt="Arbusto">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Arbusto Bugambilia</h5>
+                            <p class="card-text">This card has supporting text below as a natural lead-in to additional
+                                content.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="/src/assets/images/CameliaRosada-TalagardenViveroSantiago.jpg" class="card-img-top"
+                            alt="Arbusto">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Camelia Rosada</h5>
+                            <p class="card-text">This card has supporting text below as a natural lead-in to additional
+                                content.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--Footer-->
+    <div class="footer d-flex flex-row mt-5 p-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-3">
+                    <picture>
+                        <img src="/src/assets/logo/LogoBordeBlanco-TalagardenViveroSantiago.png" alt="Logo Talagraden"
+                            class="w-100">
+                    </picture>
+                </div>
+                <div class="col-12 col-md-3 d-flex flex-column justify-content-center align-items-center mt-3">
+                    <div class="row h5">Información</div>
+                    <div class="row h6">Política de despacho</div>
+                    <div class="row h6">Devoluciones</div>
+                    <div class="row h6">Preguntas Frecuentes</div>
+                </div>
+                <div class="col-12 col-md-3 d-flex flex-column justify-content-center align-items-center mt-3">
+                    <div class="row h5">Contacto</div>
+                    <div class="row h6">Ubicación</div>
+                    <div class="row h6">Whatsapp</div>
+                    <div class="row h6">Mail</div>
+
+                </div>
+                <div class="col-12 col-md-3 d-flex flex-column justify-content-center align-items-center mt-3">
+                    <div class="row h5">Redes Sociales</div>
+                    <div class="row h6">Instagram</div>
+                    <div class="row h6">Youtube</div>
+                    <div class="row h6">Twitter (X)</div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

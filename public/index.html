@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talagarden - Vivero 🌳</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!--Google Fonts Open Sans-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Poppins:wght@500;700&display=swap"
+        rel="stylesheet">
+    <!--Google Fonts Lato-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Open+Sans:wght@300;400;600;700&family=Poppins:wght@500;700&display=swap"
+        rel="stylesheet">
+    <!--favicon-->
+    <link rel="icon" href="./favicon.png">
+    <!-- CSS and JS-->
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/header.css">
+    <link rel="stylesheet" href="/styles/carritoModal.css">
+    <link rel="stylesheet" href="/styles/footer.css">
+    <!--tinySlider-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
+    <link rel="stylesheet" href="./tinySlider.css">
+</head>
+
+<body>
+    <!--Insertar aquí el header comp-->
+    <header id="header-menu">
+        <nav class="navbar navbar-expand-lg navbar-light p-0 bg-header">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/public/index.html">
+                    <img src="/src/assets/logo/LogoSinFondo-TalagardenViveroSantiago.png" alt="Logo Talagarden"
+                        width="150" class="d-inline-block align-text-top">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/public/index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdownMenuLink"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Catálogo
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="/src/components/frutales.html">Árboles</a></li>
+                                <li><a class="dropdown-item" href="#">Plantas</a></li>
+                                <li><a class="dropdown-item" href="#">Arbustos</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0)">Sobre Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contacto">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="banner-home">
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/src/assets/images/ArbolMancaqui-TalagardenViveroSantiago.jpg"
+                        class="d-block w-100 img-carousel-home" alt="Conjunto de árboles">
+                    <div class="carousel-caption d-md-block">
+                        <h5 class="fw-bold">¡Bienvenido a Talagarden!</h5>
+                        <p>Prepárate para recibir el verano con nuestros árboles nativos</p>
+                        <button class="btn btn-success">Ver Catálogo
+                        </button>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="/src/assets/images/ArbolNispero-TalagardenViveroSantiago.jpg"
+                        class="d-block w-100  img-carousel-home" alt="árboles verdes">
+                    <div class="carousel-caption d-md-block">
+                        <h5 class="fw-bold">Atendemos en horario extendido</h5>
+                        <p>¡Y ahora llegamos a más comunas!</p>
+                        <button class="btn btn-success">¡Contáctanos!
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    <!--tinySlider Library-->
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2 class="fw-bold text-center my-5 text-green">Explora nuestras categorías</h2>
+            </div>
+        </div>
+        
+            <div class="row my-slider boxes_categ">
+                <div class="col">
+                    <a class="decoration-none" href="/src/components/frutales.html">
+                        <h5 class="fw-bold text-center">Frutales</h5>
+                        <img src="/src/assets/images/ArbolCerezo-TalagardenViveroSantiago.jpg" alt=""
+                            class="img-slider">
+                    </a>
+                </div>
+                <div class="col">
+                    <h5 class="fw-bold text-center">Plantas</h5>
+                    <img src="/src/assets/images/PlantasHortensia-TalagardenViveroSantiago.jpg" alt=""
+                        class="img-slider">
+                </div>
+                <div class="col">
+                    <h5 class="fw-bold text-center">Arbustos</h5>
+                    <img src="/src/assets/images/PlantasSansevieria-TalagardenViveroSantiago.jpg" alt=""
+                        class="img-slider">
+                </div>
+                <button aria-label="Previous" class="prevButton d-none"></button>
+                <button aria-label="Next" class="nextButton d-none"></button>
+            </div>
+        
+    </div>
+    </div>
+    <!-- end tinySlider -->
+    <!-- contacto banner -->
+    <div id="contacto" class="container-fluid my-5 p-5 contact">
+        <div class="row justify-content-center align-items-center text-center">
+            <div class="col">
+                <h3 class="fw-bold mb-4">¿Tienes preguntas?</h3>
+                <!-- modal contacto -->
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                    data-bs-whatever="@talagarden">¡Contáctanos aquí!</button>
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title text-green" id="exampleModalLabel">Nuevo Mensaje</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Cerrar"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="recipient-name" class="col-form-label text-green">Escribe tu
+                                            correo:</label>
+                                        <input type="text" class="form-control" id="recipient-name"
+                                            placeholder="juan@gmail.com">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="message-text" class="col-form-label text-green">Escribe tu
+                                            Mensaje:</label>
+                                        <textarea class="form-control" id="message-text"
+                                            placeholder="Tu mensaje aquí"></textarea>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-outline-dark"
+                                    data-bs-dismiss="modal">Cerrar</button>
+                                <button type="button" class="btn btn-outline-success"
+                                    data-bs-dismiss="modal">Enviar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- fin modal contacto -->
+            </div>
+        </div>
+    </div>
+    <!-- fin contacto banner -->
+
+    <!-- IG API -->
+    <div class="container">
+        <div class="row text-center">
+            <div class="col">
+                AQUÍ VA LA API DE IG
+            </div>
+        </div>
+    </div>
+    <!--Footer-->
+    <div class="footer d-flex flex-row mt-5 p-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-3">
+                    <picture>
+                        <img src="/src/assets/logo/LogoBordeBlanco-TalagardenViveroSantiago.png" alt="Logo Talagraden"
+                            class="w-100">
+                    </picture>
+                </div>
+                <div class="col-12 col-md-3 d-flex flex-column justify-content-center align-items-center mt-3">
+                    <div class="row h5">Información</div>
+                    <div class="row h6">Política de despacho</div>
+                    <div class="row h6">Devoluciones</div>
+                    <div class="row h6">Preguntas Frecuentes</div>
+                </div>
+                <div class="col-12 col-md-3 d-flex flex-column justify-content-center align-items-center mt-3">
+                    <div class="row h5">Contacto</div>
+                    <div class="row h6">Ubicación</div>
+                    <div class="row h6">Whatsapp</div>
+                    <div class="row h6">Mail</div>
+
+                </div>
+                <div class="col-12 col-md-3 d-flex flex-column justify-content-center align-items-center mt-3">
+                    <div class="row h5">Redes Sociales</div>
+                    <div class="row h6">Instagram</div>
+                    <div class="row h6">Youtube</div>
+                    <div class="row h6">Twitter (X)</div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <!--tinySlider-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+    <script src="./tinySlider.js"></script>
+
+    <!-- main index.js -->
+    <script defer src="./main.js"></script>
+</body>
+
+</html>

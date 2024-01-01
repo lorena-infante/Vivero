@@ -1,0 +1,10 @@
+.banner-img {
+    max-height: 25rem;
+    object-fit: cover;
+}
+
+.title_related {
+    background-color: var(--hunterGreen);
+    color: white;
+    text-align: center;
+}

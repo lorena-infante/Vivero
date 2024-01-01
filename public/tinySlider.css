@@ -1,0 +1,53 @@
+#tns1>.tns-item {
+    max-height: 15rem;
+}
+
+.img-slider {
+    object-fit: cover;
+    height: 100%;
+}
+
+/* buttons */
+[data-controls] {
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0 5px;
+    padding: 0 1em;
+    height: 2.5em;
+    color: white;
+    background: var(--bs-success);
+    border-radius: 3px;
+    border: 0;
+}
+
+.tns-controls {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+/* Dots */
+.tns-nav {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-block: 1rem;
+}
+
+.tns-nav > .tns-nav-active {
+    background: var(--verdeOscuro)!important;
+}
+
+.tns-nav>[aria-controls] {
+    width: 9px;
+    height: 9px;
+    padding: 0;
+    margin: 0 5px;
+    border-radius: 50%;
+    background: var(--bs-success);
+    border: 0;
+}

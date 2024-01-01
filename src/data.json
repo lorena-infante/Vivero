@@ -1,0 +1,287 @@
+{
+  "frutales": {
+    "almendro": {
+      "nombre_prod": "Almendro",
+      "precio_prod": 13000,
+      "altura": "1.5 mts",
+      "img": "/src/assets/images/ArbolAlmendro-TalagardenViveroSantiago.jpg",
+      "descripcion": "Arbol que puede llegar a medir 5 mts de alto, Una floración de las mas bonitas en primavera y da frutos en gran magnitud.",
+      "cuidados": "Requiere Sol o SemiSombra, No necesita tanta agua y resiste heladas no mayores de -5 grados.",
+      "iluminacion": [
+        1,
+        3
+      ],
+      "stock": 10,
+      "temporada": "Otoño/Primavera",
+      "id": "fru_alm",
+      "cantidad": 0
+    },
+    "arandano": {
+      "nombre_prod": "Arándano",
+      "precio_prod": 18000,
+      "altura": "60 cms",
+      "img": "/src/assets/images/ArbolArandanos-TalagardenViveroSantiago.jpg",
+      "descripcion": "Arbusto que puede crecer en macetero o en tierra directamente, puede dar muchos frutos, sus hojas cambian de color en invierno y le dará vida a tu jardín en ese tiempo.",
+      "cuidados": "Requiere SemiSombra para darse bien, Requiere tierra ligeramente acida y resiste las heladas no mayores a -5 grados",
+      "iluminacion": [
+        3
+      ],
+      "stock": 10,
+      "temporada": "Otoño/Primavera",
+      "id": "fru_aran",
+      "cantidad": 0
+    },
+    "caqui": {
+      "nombre_prod": "Caqui",
+      "precio_prod": 10000,
+      "altura": "1.2 mts",
+      "img": "/src/assets/images/ArbolCaqui-TalagardenViveroSantiago.jpg",
+      "descripcion": "Árbol que puede llegar a medir 4 mts, se caracteriza por dar frutos en otoño cuando ningun árbol da frutos, al llegar el otoño pierde las hojas pero sus frutos quedan en el arbol dándole un toque especial a nuestro jardín.",
+      "cuidados": "Requiere semiSombra y humedad para darse correctamente.",
+      "iluminacion": [
+        3
+      ],
+      "stock": 10,
+      "temporada": "Otoño",
+      "id": "fru_caq",
+      "cantidad": 0
+    },
+    "cerezo": {
+      "nombre_prod": "Cerezo",
+      "precio_prod": 19000,
+      "altura": "1.5 mts",
+      "img": "/src/assets/images/ArbolCerezo-TalagardenViveroSantiago.jpg",
+      "descripcion": "Árbol que puede llegar a medir 4 mts de altura, su floración es muy linda.",
+      "cuidados": "Requiere semiSombra y humedad para darse correctamente.",
+      "iluminacion": [
+        3
+      ],
+      "stock": 10,
+      "temporada": "Primavera",
+      "id": "fru_cer",
+      "cantidad": 0
+    },
+    "ciruelo": {
+      "nombre_prod": "Ciruelo",
+      "precio_prod": 12000,
+      "altura": "1.8 mts",
+      "img": "/src/assets/images/ArbolCiruelo-TalagardenViveroSantiago.jpg",
+      "descripcion": "Árbol que puede llegar a medir 5 mts de alto. Una floración blanca en primavera y muchos frutos asegurados en verano.",
+      "cuidados": "Requiere sol o semiSombra. No necesita tanta agua y resiste heladas no mayores de -5 grados.",
+      "iluminacion": [
+        1,
+        3
+      ],
+      "stock": 10,
+      "temporada": "Primavera",
+      "id": "fru_ciru",
+      "cantidad": 0
+    },
+    "damasco": {
+      "nombre_prod": "Damasco",
+      "precio_prod": 10000,
+      "altura": "1.5 mts",
+      "img": "/src/assets/images/ArbolDamasco-TalagardenViveroSantiago.jpg",
+      "descripcion": "Árbol que puede llegar a medir 5 mts de alto. Una floración rosada en primavera y muchos frutos asegurados en verano.",
+      "cuidados": "Requiere sol o semiSombra. No necesita tanta agua y resiste heladas no menores de -5 grados.",
+      "iluminacion": [
+        1,
+        3
+      ],
+      "stock": 10,
+      "temporada": "Primavera",
+      "id": "fru_dam",
+      "cantidad": 0
+    }
+  },
+  "plantas": {
+    "camelia": {
+      "nombre_prod": "Camelia",
+      "precio_prod": 25000,
+      "altura": "1.5 mts",
+      "img": "/src/assets/images/CameliaRosada-TalagardenViveroSantiago",
+      "descripcion": "Camelias",
+      "cuidados": "Requiere Sol o SemiSombra, No necesita tanta agua y resiste heladas no mayores de -5 grados.",
+      "iluminacion": [
+        1,
+        3
+      ],
+      "stock": 10,
+      "temporada": "Otoño/Primavera",
+      "id": "plan_cam",
+      "cantidad": 0
+    },
+    "ficusLyrata": {
+      "nombre_prod": "Ficus Lyrata",
+      "precio_prod": 18000,
+      "altura": "60 cms",
+      "img": "/src/assets/images/PlantasFicusLyrata-TalagardenViveroSantiago.jpg",
+      "descripcion": "Arbusto que puede crecer en macetero o en tierra directamente, puede dar muchos frutos, sus hojas cambian de color en invierno y le dará vida a tu jardín en ese tiempo.",
+      "cuidados": "Requiere SemiSombra para darse bien, Requiere tierra ligeramente acida y resiste las heladas no mayores a -5 grados",
+      "iluminacion": [
+        3
+      ],
+      "stock": 10,
+      "temporada": "Otoño/Primavera",
+      "id": "plan_ficusLy",
+      "cantidad": 0
+    },
+    "florPajaro": {
+      "nombre_prod": "Flor del Pájaro",
+      "precio_prod": 10000,
+      "altura": "1.2 mts",
+      "img": "/src/assets/images/PlantasFlordelPajaro-TalagardenViveroSantiago.jpg",
+      "descripcion": "Árbol que puede llegar a medir 4 mts, se caracteriza por dar frutos en otoño cuando ningun árbol da frutos, al llegar el otoño pierde las hojas pero sus frutos quedan en el arbol dándole un toque especial a nuestro jardín.",
+      "cuidados": "Requiere semiSombra y humedad para darse correctamente.",
+      "iluminacion": [
+        3
+      ],
+      "stock": 10,
+      "temporada": "Otoño",
+      "id": "plan_florPa",
+      "cantidad": 0
+    },
+    "hortensia": {
+      "nombre_prod": "Hortensia",
+      "precio_prod": 19000,
+      "altura": "1.5 mts",
+      "img": "/src/assets/images/PlantasHortensia-TalagardenViveroSantiago.jpg",
+      "descripcion": "Árbol que puede llegar a medir 4 mts de altura, su floración es muy linda.",
+      "cuidados": "Requiere semiSombra y humedad para darse correctamente.",
+      "iluminacion": [
+        3
+      ],
+      "stock": 10,
+      "temporada": "Primavera",
+      "id": "plan_hort",
+      "cantidad": 0
+    },
+    "monstera": {
+      "nombre_prod": "Monstera",
+      "precio_prod": 12000,
+      "altura": "1.8 mts",
+      "img": "/src/assets/images/PlantasMonstera-TalagardenViveroSantiago.jpg",
+      "descripcion": "Árbol que puede llegar a medir 5 mts de alto. Una floración blanca en primavera y muchos frutos asegurados en verano.",
+      "cuidados": "Requiere sol o semiSombra. No necesita tanta agua y resiste heladas no mayores de -5 grados.",
+      "iluminacion": [
+        1,
+        3
+      ],
+      "stock": 10,
+      "temporada": "Primavera",
+      "id": "plan_mons",
+      "cantidad": 0
+    },
+    "palmeraInterior": {
+      "nombre_prod": "Palmera de interior",
+      "precio_prod": 10000,
+      "altura": "1.5 mts",
+      "img": "/src/assets/images/PalmeraInterior-TalagardenViveroSantiago.jpg",
+      "descripcion": "Árbol que puede llegar a medir 5 mts de alto. Una floración rosada en primavera y muchos frutos asegurados en verano.",
+      "cuidados": "Requiere sol o semiSombra. No necesita tanta agua y resiste heladas no menores de -5 grados.",
+      "iluminacion": [
+        1,
+        3
+      ],
+      "stock": 10,
+      "temporada": "Primavera",
+      "id": "plan_pamInt",
+      "cantidad": 0
+    }
+  },
+  "arbustos": {
+    "boj": {
+      "nombre_prod": "Boj",
+      "precio_prod": 25000,
+      "altura": "1.5 mts",
+      "img": "/src/assets/images/Boj-TalagardenViveroSantiago.jpg",
+      "descripcion": "Camelias",
+      "cuidados": "Requiere Sol o SemiSombra, No necesita tanta agua y resiste heladas no mayores de -5 grados.",
+      "iluminacion": [
+        1,
+        3
+      ],
+      "stock": 10,
+      "temporada": "Otoño/Primavera",
+      "id": "arb_boj",
+      "cantidad": 0
+    },
+    "bugambilia": {
+      "nombre_prod": "Bugambilia",
+      "precio_prod": 18000,
+      "altura": "60 cms",
+      "img": "/src/assets/images/ArbustosBugambilia-TalagardenViveroSantiago.jpg",
+      "descripcion": "Arbusto que puede crecer en macetero o en tierra directamente, puede dar muchos frutos, sus hojas cambian de color en invierno y le dará vida a tu jardín en ese tiempo.",
+      "cuidados": "Requiere SemiSombra para darse bien, Requiere tierra ligeramente acida y resiste las heladas no mayores a -5 grados",
+      "iluminacion": [
+        3
+      ],
+      "stock": 10,
+      "temporada": "Otoño/Primavera",
+      "id": "arb_bugam",
+      "cantidad": 0
+    },
+    "coronaPoeta": {
+      "nombre_prod": "Corona del Poeta",
+      "precio_prod": 10000,
+      "altura": "1.2 mts",
+      "img": "/src/assets/images/ArbustosCoronaDePoeta-TalagardenViveroSantiago.jpg",
+      "descripcion": "Árbol que puede llegar a medir 4 mts, se caracteriza por dar frutos en otoño cuando ningun árbol da frutos, al llegar el otoño pierde las hojas pero sus frutos quedan en el arbol dándole un toque especial a nuestro jardín.",
+      "cuidados": "Requiere semiSombra y humedad para darse correctamente.",
+      "iluminacion": [
+        3
+      ],
+      "stock": 10,
+      "temporada": "Otoño",
+      "id": "arb_corona",
+      "cantidad": 0
+    },
+    "laurentina": {
+      "nombre_prod": "Laurentina",
+      "precio_prod": 19000,
+      "altura": "1.5 mts",
+      "img": "/src/assets/images/ArbustosLaurentina-TalagardenViveroSantiago.jpg",
+      "descripcion": "Árbol que puede llegar a medir 4 mts de altura, su floración es muy linda.",
+      "cuidados": "Requiere semiSombra y humedad para darse correctamente.",
+      "iluminacion": [
+        3
+      ],
+      "stock": 10,
+      "temporada": "Primavera",
+      "id": "arb_laur",
+      "cantidad": 0
+    },
+    "mascantha": {
+      "nombre_prod": "Mascantha",
+      "precio_prod": 12000,
+      "altura": "1.8 mts",
+      "img": "/src/assets/images/ArbustosMascantha-TalagardenViveroSantiago.jpg",
+      "descripcion": "Árbol que puede llegar a medir 5 mts de alto. Una floración blanca en primavera y muchos frutos asegurados en verano.",
+      "cuidados": "Requiere sol o semiSombra. No necesita tanta agua y resiste heladas no mayores de -5 grados.",
+      "iluminacion": [
+        1,
+        3
+      ],
+      "stock": 10,
+      "temporada": "Primavera",
+      "id": "arb_mascan",
+      "cantidad": 0
+    },
+    "nandina": {
+      "nombre_prod": "Nandina",
+      "precio_prod": 10000,
+      "altura": "1.5 mts",
+      "img": "/src/assets/images/ArbustosNandina-TalagardenViveroSantiago.jpg",
+      "descripcion": "Árbol que puede llegar a medir 5 mts de alto. Una floración rosada en primavera y muchos frutos asegurados en verano.",
+      "cuidados": "Requiere sol o semiSombra. No necesita tanta agua y resiste heladas no menores de -5 grados.",
+      "iluminacion": [
+        1,
+        3
+      ],
+      "stock": 10,
+      "temporada": "Primavera",
+      "id": "arb_nand",
+      "cantidad": 0
+    }
+  }
+}
