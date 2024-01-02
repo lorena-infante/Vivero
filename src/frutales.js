@@ -8,7 +8,7 @@ spinner.innerHTML = `<div class="spinner-border text-success" role="status">
 
 //debugger;
 //Test con fetch
-/* fetch("/src/data.json")
+/* fetch("./../src/data.json")
   .then((res) => {
     if (!res.ok) {
       //console.log('error');
@@ -33,7 +33,7 @@ spinner.innerHTML = `<div class="spinner-border text-success" role="status">
 
 //Async/Await
 /* const getProds = async () => {
-  let res = await fetch("/src/data.json");
+  let res = await fetch("/./../src/data.json");
   try {
     if (!res.ok) {
       throw new Error(`Error: ${res.status} ${res.statusText}`);
@@ -178,7 +178,7 @@ const productos = [
 
 // Para usar el LS como persistencia invoco esta función sólo una vez. La dejo comentada para mostrar progreso
 
-//const guardarProductosEnLS = localStorage.setItem('producto',JSON.stringify(productos));
+const guardarProductosEnLS = localStorage.setItem('producto',JSON.stringify(productos));
 
 // Variables / Constantes globales
 const objProductos = JSON.parse(localStorage.getItem("producto"));

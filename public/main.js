@@ -1,18 +1,18 @@
 const categorias = [
   {
     nombre: "Frutales",
-    img: "/src/assets/images/ArbolCerezo-TalagardenViveroSantiago.jpg",
-    href: "/src/components/frutales.html",
+    img: "./src/assets/images/ArbolCerezo-TalagardenViveroSantiago.jpg",
+    href: "./src/components/frutales.html",
   },
   {
     nombre: "Plantas",
-    img: "/src/assets/images/PlantasHortensia-TalagardenViveroSantiago.jpg",
-    href: "/src/components/plantas.html",
+    img: "./src/assets/images/PlantasHortensia-TalagardenViveroSantiago.jpg",
+    href: "./src/components/plantas.html",
   },
   {
     nombre: "Arbustos",
-    img: "/src/assets/images/PlantasSansevieria-TalagardenViveroSantiago.jpg",
-    href: "/src/components/arbustos.html",
+    img: "./src/assets/images/PlantasSansevieria-TalagardenViveroSantiago.jpg",
+    href: "./src/components/arbustos.html",
   },
 ];
 
