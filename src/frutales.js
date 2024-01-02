@@ -61,7 +61,7 @@ const categorias = {
       nombre_prod: "Almendro",
       precio_prod: 13000,
       altura: "1.5 mts",
-      img: "/src/assets/images/ArbolAlmendro-TalagardenViveroSantiago.jpg",
+      img: "./../assets/images/ArbolAlmendro-TalagardenViveroSantiago.jpg",
       descripcion:
         "Arbol que puede llegar a medir 5 mts de alto, Una floración de las mas bonitas en primavera y da frutos en gran magnitud.",
       cuidados:
@@ -77,7 +77,7 @@ const categorias = {
       nombre_prod: "Arándano",
       precio_prod: 18000,
       altura: "60 cms",
-      img: "/src/assets/images/ArbolArandanos-TalagardenViveroSantiago.jpg",
+      img: "./../assets/images/ArbolArandanos-TalagardenViveroSantiago.jpg",
       descripcion:
         "Arbusto que puede crecer en macetero o en tierra directamente, puede dar muchos frutos, sus hojas cambian de color en invierno y le dará vida a tu jardín en ese tiempo.",
       cuidados:
@@ -92,7 +92,7 @@ const categorias = {
       nombre_prod: "Caqui",
       precio_prod: 10000,
       altura: "1.2 mts",
-      img: "/src/assets/images/ArbolCaqui-TalagardenViveroSantiago.jpg",
+      img: "./../assets/images/ArbolCaqui-TalagardenViveroSantiago.jpg",
       descripcion:
         "Árbol que puede llegar a medir 4 mts, se caracteriza por dar frutos en otoño cuando ningun árbol da frutos, al llegar el otoño pierde las hojas pero sus frutos quedan en el arbol dándole un toque especial a nuestro jardín.",
       cuidados: "Requiere semiSombra y humedad para darse correctamente.",
@@ -106,7 +106,7 @@ const categorias = {
       nombre_prod: "Cerezo",
       precio_prod: 19000,
       altura: "1.5 mts",
-      img: "/src/assets/images/ArbolCerezo-TalagardenViveroSantiago.jpg",
+      img: "./../assets/images/ArbolCerezo-TalagardenViveroSantiago.jpg",
       descripcion:
         "Árbol que puede llegar a medir 4 mts de altura, su floración es muy linda.",
       cuidados: "Requiere semiSombra y humedad para darse correctamente.",
@@ -120,7 +120,7 @@ const categorias = {
       nombre_prod: "Ciruelo",
       precio_prod: 12000,
       altura: "1.8 mts",
-      img: "/src/assets/images/ArbolCiruelo-TalagardenViveroSantiago.jpg",
+      img: "./../assets/images/ArbolCiruelo-TalagardenViveroSantiago.jpg",
       descripcion:
         "Árbol que puede llegar a medir 5 mts de alto. Una floración blanca en primavera y muchos frutos asegurados en verano.",
       cuidados:
@@ -136,7 +136,7 @@ const categorias = {
       nombre_prod: "Damasco",
       precio_prod: 10000,
       altura: "1.5 mts",
-      img: "/src/assets/images/ArbolDamasco-TalagardenViveroSantiago.jpg",
+      img: "./../assets/images/ArbolDamasco-TalagardenViveroSantiago.jpg",
       descripcion:
         "Árbol que puede llegar a medir 5 mts de alto. Una floración rosada en primavera y muchos frutos asegurados en verano.",
       cuidados:
