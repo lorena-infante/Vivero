@@ -367,19 +367,43 @@ function dibujarCarrito() {
 let btnEliminar = document.querySelectorAll(".delete-btn");
 let rowProd = document.querySelectorAll(".row-producto");
 let rowProdArr = Array.from(rowProd);
-let rowToDeleteID;
+let rowToDelete;
 let btnToDeleteID;
-
 
 //eliminar prod
 btnEliminar.forEach((btn) => {
   btn.addEventListener("click", (e) => {
     console.log("btn: ", e.target.dataset.id);
     btnToDeleteID = e.target.dataset.id;
-    
-    return btnToDeleteID;
+    rowToDelete = rowProdArr.find((row) => { return row.dataset.id === btnToDeleteID });
+    console.log('rowToDelete: ', rowToDelete);
+    //rowToDelete.remove();
+  
+
+
+   /*  let comparingIds =
+    rowProdArr.forEach((row) => { 
+      rowToDeleteID = row.dataset.id;
+      console.log('rowToDeleteID: ',rowToDeleteID,' btnToDeleteID: ',btnToDeleteID);
+      if (rowToDeleteID === btnToDeleteID){
+        console.log('trae carrito_LS: ', getCarritoLS);
+        console.log('rowToDeleteID: ', rowToDeleteID);
+
+        getCarritoLS.forEach((el)=>{
+          if(el.id === rowToDeleteID){
+            //no se puede eliminar un solo elemento del LS.
+            JSON.parse(localStorage.removeItem('carrito_LS'));
+          }
+        })
+        
+      }
+
+    }); */
+
+
     //rowToDeleteID = rowProdArr.find((row) => { row.dataset.id === btnToDeleteID });
     //console.log('rowToDeleteID: ', rowToDeleteID);
+    //return btnToDeleteID;
   });
 
 });
