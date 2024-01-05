@@ -6,55 +6,6 @@ spinner.innerHTML = `<div class="spinner-border text-success" role="status">
 <span class="visually-hidden">Loading...</span>
 </div>`;
 
-//debugger;
-//Test con fetch
-/* fetch("./../src/data.json")
-  .then((res) => {
-    if (!res.ok) {
-      //console.log('error');
-      throw new Error(`Error: ${res.status} ${res.statusText}`);
-    }
-    return res.json();
-  })
-  .then((data) => {
-    console.log(data);
-    data_arr.push(data);
-    data_arr.forEach((item) => {
-      for (prop in item) {
-        console.log(prop, item[prop]);
-      }
-    });
-  })
-  .catch((err) => { console.error(err)})
-  .finally(() => {
-    spinner.innerHTML =``;
-    console.log('terminó la promesa');
-}); */
-
-//Async/Await
-/* const getProds = async () => {
-  let res = await fetch("/./../src/data.json");
-  try {
-    if (!res.ok) {
-      throw new Error(`Error: ${res.status} ${res.statusText}`);
-    }
-    let data = await res.json();
-    console.log(data);
-    data_arr.push(data);
-    data_arr.forEach((item) => {
-      for (prop in item) {
-        console.log(prop, item[prop]);
-      }
-    });
-  } catch (error) {
-    console.error(error);
-  } finally {
-    spinner.innerHTML = ``;
-    console.log("terminó la promesa");
-  }
-};
-getProds(); */
-
 const categorias = {
   frutales: {
     almendro: {
@@ -339,7 +290,7 @@ function dibujarCarrito() {
             <div class="row row-producto" data-id ="${elemento.id}">
                 <div class="card mb-3 p-2" style="max-width: 540px;">
                     <div class="row g-0 align-items-center">
-                        <div class="col-12 col-md-4">
+                        <div class="col-6 col-md-4">
                             <img src="${elemento.img}"
                                 class="img-fluid rounded-start img-cover"
                                 alt="Imagen de ${elemento.nombre}">
@@ -351,62 +302,27 @@ function dibujarCarrito() {
                                 <p class="card-text mb-1 h6">Cantidad: ${elemento.cantidad}</p>
                             </div>
                         </div>
-                        <div
-                            class="col-6 col-md-2 align-items-center justify-content-center d-flex delete-btn-container">
-                            <button data-id="${elemento.id}" class="btn btn-outline-danger delete-btn">
-                                Eliminar
-                            </button>
-                        </div>
                     </div>
                 </div>
             </div>`;
   });
 }
 
-//rows a borrar
-let btnEliminar = document.querySelectorAll(".delete-btn");
-let rowProd = document.querySelectorAll(".row-producto");
-let rowProdArr = Array.from(rowProd);
-let rowToDelete;
-let btnToDeleteID;
+// Vaciar carrito
+let btnEliminar = document.getElementById('btn-delete-all');
 
-//eliminar prod
-btnEliminar.forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-    console.log("btn: ", e.target.dataset.id);
-    btnToDeleteID = e.target.dataset.id;
-    rowToDelete = rowProdArr.find((row) => { return row.dataset.id === btnToDeleteID });
-    console.log('rowToDelete: ', rowToDelete);
-    //rowToDelete.remove();
+btnEliminar.addEventListener('click', ()=>{
+  console.log('getCarritoLS',getCarritoLS);
+  if(getCarritoLS !== null){
+    localStorage.removeItem('carrito_LS');
+    alert('se recargará');
+    window.location.reload();
+  }else {
+    alert('NO hay elementos para borrar');
+
+  }
   
-
-
-   /*  let comparingIds =
-    rowProdArr.forEach((row) => { 
-      rowToDeleteID = row.dataset.id;
-      console.log('rowToDeleteID: ',rowToDeleteID,' btnToDeleteID: ',btnToDeleteID);
-      if (rowToDeleteID === btnToDeleteID){
-        console.log('trae carrito_LS: ', getCarritoLS);
-        console.log('rowToDeleteID: ', rowToDeleteID);
-
-        getCarritoLS.forEach((el)=>{
-          if(el.id === rowToDeleteID){
-            //no se puede eliminar un solo elemento del LS.
-            JSON.parse(localStorage.removeItem('carrito_LS'));
-          }
-        })
-        
-      }
-
-    }); */
-
-
-    //rowToDeleteID = rowProdArr.find((row) => { row.dataset.id === btnToDeleteID });
-    //console.log('rowToDeleteID: ', rowToDeleteID);
-    //return btnToDeleteID;
-  });
-
-});
+})
 
 
 function calcSubtotal() {
