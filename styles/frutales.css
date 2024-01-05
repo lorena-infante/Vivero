@@ -8,3 +8,7 @@
     color: white;
     text-align: center;
 }
+img.card-img-top {
+    max-height: 15rem;
+    object-fit: cover;
+}
