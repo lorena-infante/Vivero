@@ -1,4 +1,3 @@
-//Datos a persistir
 let data_arr = [];
 let spinner = document.getElementById("spinner");
 
@@ -312,18 +311,33 @@ function dibujarCarrito() {
 let btnEliminar = document.getElementById('btn-delete-all');
 
 btnEliminar.addEventListener('click', ()=>{
-  console.log('getCarritoLS',getCarritoLS);
-  if(getCarritoLS !== null){
-    localStorage.removeItem('carrito_LS');
-    alert('se recargará');
-    window.location.reload();
-  }else {
-    alert('NO hay elementos para borrar');
+  if (getCarritoLS !== null){
+    Swal.fire({
+      title: '¿Estás seguro?',
+      text: 'Se recargará la página',
+      icon: 'question',
+      showCancelButton: true,
+      cancelButtonText: 'No',
+      cancelButtonColor:'#dc3545',
+      confirmButtonText: 'Sí',
+      confirmButtonColor:'#198754'
+    }).then((result) =>{
+      if (result.isConfirmed){
+        localStorage.removeItem('carrito_LS');
+        window.location.reload();
+      }
+    });
 
+  } else {
+    Swal.fire({
+      title: 'Psst...',
+      text: 'No hay elementos para borrar',
+      icon: 'info',
+      confirmButtonColor:'#0dcaf0'
+    });
   }
   
 })
-
 
 function calcSubtotal() {
   let subTotalContainer = document.getElementById("subtotal_modal");
