@@ -31,11 +31,9 @@ Los usuarios finales podrán:
 
 ![endpoint_instagram](https://github.com/lorena-infante/Vivero_Infante_Lorena/assets/53655322/f68888c8-7e5d-4df1-a4ea-aa26c778367e)
 
-### Screenshots
+### Link producción
 
-### Links
-
-- Sitio: https://lorena-infante.github.io/Vivero_Infante_Lorena/index.html
+🟢 Sitio: https://lorena-infante.github.io/Vivero_Infante_Lorena/index.html 🟢
 
 ## El proceso
 
@@ -45,8 +43,16 @@ Los usuarios finales podrán:
 - CSS custom properties
 - Flexbox
 - CSS Grid
-- Mobile-first workflow
+- Diseño e implementación Responsive
 - Javascript Vainilla
 - [Bootstrap 5.0.2 ](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
 - [Tinyslider](https://github.com/ganlanyuan/tiny-slider) - Para las animaciones con slider
 - [SweetAlert2](https://sweetalert2.github.io/) - Para personalizar alerts
+
+
+### Screenshots
+
+### Desktop
+
+### Mobile
+
