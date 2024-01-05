@@ -1,59 +1,9 @@
-//Datos a persistir
 let data_arr = [];
 let spinner = document.getElementById("spinner");
 
 spinner.innerHTML = `<div class="spinner-border text-success" role="status">
 <span class="visually-hidden">Loading...</span>
 </div>`;
-
-//debugger;
-//Test con fetch
-/* fetch("./../src/data.json")
-  .then((res) => {
-    if (!res.ok) {
-      //console.log('error');
-      throw new Error(`Error: ${res.status} ${res.statusText}`);
-    }
-    return res.json();
-  })
-  .then((data) => {
-    console.log(data);
-    data_arr.push(data);
-    data_arr.forEach((item) => {
-      for (prop in item) {
-        console.log(prop, item[prop]);
-      }
-    });
-  })
-  .catch((err) => { console.error(err)})
-  .finally(() => {
-    spinner.innerHTML =``;
-    console.log('terminó la promesa');
-}); */
-
-//Async/Await
-/* const getProds = async () => {
-  let res = await fetch("/./../src/data.json");
-  try {
-    if (!res.ok) {
-      throw new Error(`Error: ${res.status} ${res.statusText}`);
-    }
-    let data = await res.json();
-    console.log(data);
-    data_arr.push(data);
-    data_arr.forEach((item) => {
-      for (prop in item) {
-        console.log(prop, item[prop]);
-      }
-    });
-  } catch (error) {
-    console.error(error);
-  } finally {
-    spinner.innerHTML = ``;
-    console.log("terminó la promesa");
-  }
-};
-getProds(); */
 
 const categorias = {
   frutales: {
@@ -339,7 +289,7 @@ function dibujarCarrito() {
             <div class="row row-producto" data-id ="${elemento.id}">
                 <div class="card mb-3 p-2" style="max-width: 540px;">
                     <div class="row g-0 align-items-center">
-                        <div class="col-12 col-md-4">
+                        <div class="col-6 col-md-4">
                             <img src="${elemento.img}"
                                 class="img-fluid rounded-start img-cover"
                                 alt="Imagen de ${elemento.nombre}">
@@ -351,39 +301,43 @@ function dibujarCarrito() {
                                 <p class="card-text mb-1 h6">Cantidad: ${elemento.cantidad}</p>
                             </div>
                         </div>
-                        <div
-                            class="col-6 col-md-2 align-items-center justify-content-center d-flex delete-btn-container">
-                            <button data-id="${elemento.id}" class="btn btn-outline-danger delete-btn">
-                                Eliminar
-                            </button>
-                        </div>
                     </div>
                 </div>
             </div>`;
   });
 }
 
-//rows a borrar
-let btnEliminar = document.querySelectorAll(".delete-btn");
-let rowProd = document.querySelectorAll(".row-producto");
-let rowProdArr = Array.from(rowProd);
-let rowToDeleteID;
-let btnToDeleteID;
+// Vaciar carrito
+let btnEliminar = document.getElementById('btn-delete-all');
 
+btnEliminar.addEventListener('click', ()=>{
+  if (getCarritoLS !== null){
+    Swal.fire({
+      title: '¿Estás seguro?',
+      text: 'Se recargará la página',
+      icon: 'question',
+      showCancelButton: true,
+      cancelButtonText: 'No',
+      cancelButtonColor:'#dc3545',
+      confirmButtonText: 'Sí',
+      confirmButtonColor:'#198754'
+    }).then((result) =>{
+      if (result.isConfirmed){
+        localStorage.removeItem('carrito_LS');
+        window.location.reload();
+      }
+    });
 
-//eliminar prod
-btnEliminar.forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-    console.log("btn: ", e.target.dataset.id);
-    btnToDeleteID = e.target.dataset.id;
-    
-    return btnToDeleteID;
-    //rowToDeleteID = rowProdArr.find((row) => { row.dataset.id === btnToDeleteID });
-    //console.log('rowToDeleteID: ', rowToDeleteID);
-  });
-
-});
-
+  } else {
+    Swal.fire({
+      title: 'Psst...',
+      text: 'No hay elementos para borrar',
+      icon: 'info',
+      confirmButtonColor:'#0dcaf0'
+    });
+  }
+  
+})
 
 function calcSubtotal() {
   let subTotalContainer = document.getElementById("subtotal_modal");

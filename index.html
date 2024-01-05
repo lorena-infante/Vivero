@@ -35,10 +35,11 @@
     <!--tinySlider-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
     <link rel="stylesheet" href="./public/tinySlider.css">
+    <!-- IG CSS-->
+    <link rel="stylesheet" href="./styles/instagramAPI.css">
 </head>
 
 <body>
-    <!--Insertar aquí el header comp-->
     <header id="header-menu">
         <nav class="navbar navbar-expand-lg navbar-light p-0 bg-header">
             <div class="container-fluid">
@@ -63,8 +64,6 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <li><a class="dropdown-item" href="./src/components/frutales.html">Árboles</a></li>
-                                <li><a class="dropdown-item" href="#">Plantas</a></li>
-                                <li><a class="dropdown-item" href="#">Arbustos</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
@@ -93,8 +92,9 @@
                     <div class="carousel-caption d-md-block">
                         <h5 class="fw-bold">¡Bienvenido a Talagarden!</h5>
                         <p>Prepárate para recibir el verano con nuestros árboles nativos</p>
-                        <button class="btn btn-success">Ver Catálogo
-                        </button>
+                        <a href="./src/components/frutales.html"><button class="btn btn-success">Ver Frutales
+                            </button>
+                        </a>
                     </div>
                 </div>
                 <div class="carousel-item">
@@ -127,34 +127,32 @@
                 <h2 class="fw-bold text-center my-5 text-green">Explora nuestras categorías</h2>
             </div>
         </div>
-        
-            <div class="row my-slider boxes_categ">
-                <div class="col">
-                    <a class="decoration-none" href="./src/components/frutales.html">
-                        <h5 class="fw-bold text-center">Frutales</h5>
-                        <img src="./src/assets/images/ArbolCerezo-TalagardenViveroSantiago.jpg" alt=""
-                            class="img-slider">
-                    </a>
-                </div>
-                <div class="col">
-                    <h5 class="fw-bold text-center">Plantas</h5>
-                    <img src="./src/assets/images/PlantasHortensia-TalagardenViveroSantiago.jpg" alt=""
-                        class="img-slider">
-                </div>
-                <div class="col">
-                    <h5 class="fw-bold text-center">Arbustos</h5>
-                    <img src="./src/assets/images/PlantasSansevieria-TalagardenViveroSantiago.jpg" alt=""
-                        class="img-slider">
-                </div>
-                <button aria-label="Previous" class="prevButton d-none"></button>
-                <button aria-label="Next" class="nextButton d-none"></button>
+
+        <div class="row my-slider boxes_categ">
+            <div class="col">
+                <a class="decoration-none" href="./src/components/frutales.html">
+                    <h5 class="fw-bold text-center">Frutales</h5>
+                    <img src="./src/assets/images/ArbolCerezo-TalagardenViveroSantiago.jpg" alt="" class="img-slider">
+                </a>
             </div>
-        
+            <div class="col">
+                <h5 class="fw-bold text-center">Plantas</h5>
+                <img src="./src/assets/images/PlantasHortensia-TalagardenViveroSantiago.jpg" alt="" class="img-slider">
+            </div>
+            <div class="col">
+                <h5 class="fw-bold text-center">Arbustos</h5>
+                <img src="./src/assets/images/PlantasSansevieria-TalagardenViveroSantiago.jpg" alt=""
+                    class="img-slider">
+            </div>
+            <button aria-label="Previous" class="prevButton d-none"></button>
+            <button aria-label="Next" class="nextButton d-none"></button>
+        </div>
+
     </div>
     </div>
     <!-- end tinySlider -->
     <!-- contacto banner -->
-    <div id="contacto" class="container-fluid my-5 p-5 contact">
+    <div id="contacto" class="container my-5 p-5 contact">
         <div class="row justify-content-center align-items-center text-center">
             <div class="col">
                 <h3 class="fw-bold mb-4">¿Tienes preguntas?</h3>
@@ -200,17 +198,15 @@
         </div>
     </div>
     <!-- fin contacto banner -->
-
     <!-- IG API -->
     <div class="container">
-        <div class="row text-center">
-            <div class="col">
-                AQUÍ VA LA API DE IG
-            </div>
+        <h3 class="fw-bold text-green mb-3">Visítanos en Instagram</h3>
+        <div id="posts-container" class="row flex-row text-center my-4">
+            <div id="spinner"></div>
         </div>
     </div>
     <!--Footer-->
-    <div class="footer d-flex flex-row mt-5 p-3">
+    <div class="footer d-flex mt-5 p-3">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-3">
@@ -246,6 +242,8 @@
     <!--tinySlider-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
     <script src="./public/tinySlider.js"></script>
+    <!--IG API JS-->
+    <script src="./src/instagramAPI.js"></script>
 
     <!-- main index.js -->
     <script defer src="./public/main.js"></script>

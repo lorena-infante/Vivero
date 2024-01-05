@@ -37,11 +37,12 @@
     <script defer src="./../../src/producto.js"></script>
     <script defer src="./../../src/frutales.js"></script>
     <script defer src="./../../src/carritoModal.js"></script>
+    <!--sweetalert-->
+    <script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
 
 <body>
-    <!--Insertar aquí el header comp-->
     <header id="header-menu">
         <nav class="navbar navbar-expand-lg navbar-light p-0 bg-header">
             <div class="container-fluid">
@@ -66,8 +67,6 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <li><a class="dropdown-item" href="javascript:void(0)">Árboles</a></li>
-                                <li><a class="dropdown-item" href="#">Plantas</a></li>
-                                <li><a class="dropdown-item" href="#">Arbustos</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
@@ -105,8 +104,9 @@
                                                 <div class="row justify-content-between text-end">
                                                     <div class="col d-flex gap-3 justify-content-end">
                                                         <button type="button" class="btn btn-outline-dark"
-                                                            data-bs-dismiss="modal">Cerrar</button><button type="button"
-                                                            class="btn btn-outline-success">Ir al carrito</button>
+                                                            data-bs-dismiss="modal">Cerrar</button>
+                                                            <button id="btn-delete-all" type="button"
+                                                            class="btn btn-outline-danger">Vaciar carrito</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -165,8 +165,7 @@
                             class="card-img-top" alt="Arbusto">
                         <div class="card-body">
                             <h5 class="card-title fw-bold">Arbusto Corona Del Poeta</h5>
-                            <p class="card-text">This card has supporting text below as a natural lead-in to additional
-                                content.</p>
+                            <p class="card-text">También conocida como flor de pascua, flor de Nochebuena, flor de Navidad o Cuetlaxochitl. Es una especie de la familia Euphorbiaceae nativa de México y Centroamérica.</p>
                         </div>
                     </div>
                     <div class="card">
@@ -174,8 +173,7 @@
                             class="card-img-top" alt="Arbusto">
                         <div class="card-body">
                             <h5 class="card-title fw-bold">Arbusto Bugambilia</h5>
-                            <p class="card-text">This card has supporting text below as a natural lead-in to additional
-                                content.</p>
+                            <p class="card-text">Es nativo de los bosques tropicales húmedos de América del Sur, principalmente de los situados en áreas de Brasil, Perú y norte de Argentina y ampliamente cultivado en regiones tropicales y subtropicales.</p>
                         </div>
                     </div>
                     <div class="card">
@@ -183,8 +181,7 @@
                             alt="Arbusto">
                         <div class="card-body">
                             <h5 class="card-title fw-bold">Camelia Rosada</h5>
-                            <p class="card-text">This card has supporting text below as a natural lead-in to additional
-                                content.</p>
+                            <p class="card-text">Originarias de las regiones tropicales y subtropicales de Asia sudoriental, China y Japón. Se las encuentra en los bosques situados a media altura sobre el nivel del mar. </p>
                         </div>
                     </div>
                 </div>
